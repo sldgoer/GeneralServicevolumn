@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneralServicevolume"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
+        <TabControl TabStripPlacement="Top" Margin="10">
+            <TabItem Header="在线查询统计" Background="AliceBlue" FontSize="14">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label>请选择日志文件目录：</Label>
+                        <TextBox x:Name="txtDirectory" Width="290"></TextBox>
+                        <Button x:Name="btnSelectDirectory"  Width="100">选择目录</Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label>请选择要统计的月份：</Label>
+                        <DatePicker Width="200" ></DatePicker>
+                        <Label Foreground="Red">选择统计月份的任意一日即可</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button>开始统计</Button>
+                        <Button>清空参数</Button>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
         
     </Grid>
 </Window>
