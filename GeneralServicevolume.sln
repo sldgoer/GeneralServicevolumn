@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerralService.Utility.Tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneralService.Core", "GeneralService.Core", "{6CC8C926-CE71-4D28-A7B4-1DEC2911968F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.Core.Statistics", "GeneralService.Core.Statistics\GeneralService.Core.Statistics.csproj", "{A47299D4-E459-49C9-91ED-54602D802BE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.Core", "GeneralService.Core.Statistics\GeneralService.Core.csproj", "{A47299D4-E459-49C9-91ED-54602D802BE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.Core.StatisticsTests", "GeneralService.Core.StatisticsTests\GeneralService.Core.StatisticsTests.csproj", "{FB752FDB-34DC-4811-AE80-D5252F8781F1}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneralSerivce.Tests", "GeneralSerivce.Tests", "{ADD15BCE-7337-4749-92D2-ABF5897A30D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.ServiceVolume.ConsoleTests", "GeneralService.ServiceVolume.ConsoleTests\GeneralService.ServiceVolume.ConsoleTests.csproj", "{699C64CB-300F-4EA0-B5D6-36527BD63206}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GeneralService.DataBase", "GeneralService.DataBase\GeneralService.DataBase.sqlproj", "{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.CoreTests", "GeneralService.CoreTests\GeneralService.CoreTests.csproj", "{10217464-6620-439F-AE24-BF3073E2BA1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,16 @@ Global
 		{699C64CB-300F-4EA0-B5D6-36527BD63206}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{699C64CB-300F-4EA0-B5D6-36527BD63206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{699C64CB-300F-4EA0-B5D6-36527BD63206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8902D5BB-FDB9-49F4-9299-48CD91A27BAD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{10217464-6620-439F-AE24-BF3073E2BA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10217464-6620-439F-AE24-BF3073E2BA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10217464-6620-439F-AE24-BF3073E2BA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10217464-6620-439F-AE24-BF3073E2BA1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

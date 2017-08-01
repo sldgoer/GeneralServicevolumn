@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GjjBookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BlackList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idcard" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+          <Property Name="addtime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingLeft">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="beginTime" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="endTime" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="leftNum" Type="int" Nullable="false" />
+          <Property Name="areaCode" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="interface" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingRecord">
+          <Key>
+            <PropertyRef Name="bookingSerial" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="frontChar" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="beginTime" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="endTime" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="bookingSerial" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+          <Property Name="callPlatform" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idcard" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="areaCode" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingSet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="frontChar" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="beginTime" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="endTime" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="maxNum" Type="int" Nullable="false" />
+          <Property Name="areaCode" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessInfo">
+          <Key>
+            <PropertyRef Name="serial" />
+          </Key>
+          <Property Name="serial" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Managers">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="userpwd" Type="nchar" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpecialDay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="isWorkDay" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GjjBookingModelStoreContainer">
+          <EntitySet Name="BlackList" EntityType="Self.BlackList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingLeft" EntityType="Self.BookingLeft" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingLog" EntityType="Self.BookingLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingRecord" EntityType="Self.BookingRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookingSet" EntityType="Self.BookingSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessInfo" EntityType="Self.BusinessInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Managers" EntityType="Self.Managers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SpecialDay" EntityType="Self.SpecialDay" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GjjBookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BlackList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idcard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="BookingLeft">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="beginTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="leftNum" Type="Int32" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="interface" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingRecord">
+          <Key>
+            <PropertyRef Name="bookingSerial" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="frontChar" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="beginTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="bookingSerial" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <Property Name="callPlatform" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idcard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingSet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="frontChar" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="beginTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="endTime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="maxNum" Type="Int32" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessInfo">
+          <Key>
+            <PropertyRef Name="serial" />
+          </Key>
+          <Property Name="serial" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Managers">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="userpwd" Type="String" MaxLength="16" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpecialDay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isWorkDay" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GjjBookingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlackList" EntityType="Self.BlackList" />
+          <EntitySet Name="BookingLeft" EntityType="Self.BookingLeft" />
+          <EntitySet Name="BookingLog" EntityType="Self.BookingLog" />
+          <EntitySet Name="BookingRecord" EntityType="Self.BookingRecord" />
+          <EntitySet Name="BookingSet" EntityType="Self.BookingSet" />
+          <EntitySet Name="BusinessInfo" EntityType="Self.BusinessInfo" />
+          <EntitySet Name="Managers" EntityType="Self.Managers" />
+          <EntitySet Name="SpecialDay" EntityType="Self.SpecialDay" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GjjBookingModelStoreContainer" CdmEntityContainer="GjjBookingEntities">
+          <EntitySetMapping Name="BlackList">
+            <EntityTypeMapping TypeName="GjjBookingModel.BlackList">
+              <MappingFragment StoreEntitySet="BlackList">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idcard" ColumnName="idcard" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="addtime" ColumnName="addtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingLeft">
+            <EntityTypeMapping TypeName="GjjBookingModel.BookingLeft">
+              <MappingFragment StoreEntitySet="BookingLeft">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="beginTime" ColumnName="beginTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="leftNum" ColumnName="leftNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingLog">
+            <EntityTypeMapping TypeName="GjjBookingModel.BookingLog">
+              <MappingFragment StoreEntitySet="BookingLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="interface" ColumnName="interface" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingRecord">
+            <EntityTypeMapping TypeName="GjjBookingModel.BookingRecord">
+              <MappingFragment StoreEntitySet="BookingRecord">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="frontChar" ColumnName="frontChar" />
+                <ScalarProperty Name="beginTime" ColumnName="beginTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="bookingSerial" ColumnName="bookingSerial" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="callPlatform" ColumnName="callPlatform" />
+                <ScalarProperty Name="idcard" ColumnName="idcard" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingSet">
+            <EntityTypeMapping TypeName="GjjBookingModel.BookingSet">
+              <MappingFragment StoreEntitySet="BookingSet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="frontChar" ColumnName="frontChar" />
+                <ScalarProperty Name="beginTime" ColumnName="beginTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="maxNum" ColumnName="maxNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessInfo">
+            <EntityTypeMapping TypeName="GjjBookingModel.BusinessInfo">
+              <MappingFragment StoreEntitySet="BusinessInfo">
+                <ScalarProperty Name="serial" ColumnName="serial" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Managers">
+            <EntityTypeMapping TypeName="GjjBookingModel.Managers">
+              <MappingFragment StoreEntitySet="Managers">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userpwd" ColumnName="userpwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialDay">
+            <EntityTypeMapping TypeName="GjjBookingModel.SpecialDay">
+              <MappingFragment StoreEntitySet="SpecialDay">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="isWorkDay" ColumnName="isWorkDay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

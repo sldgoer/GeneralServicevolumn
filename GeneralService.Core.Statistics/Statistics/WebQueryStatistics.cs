@@ -27,7 +27,7 @@ namespace GeneralService.Core.Statistics
             foreach (var fn in LogFilesName)
             {
                 var res = txtHandler.getTxtAllLinesString(fn);
-                int count = res.Count(x => x.Contains("Detail"));
+                int count = res.Count(x => x.Contains("LoginInfo"));
                 _WebQueryCount += count;
             }
 

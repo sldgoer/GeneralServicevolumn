@@ -6,24 +6,18 @@ using System.Threading.Tasks;
 
 namespace GeneralService.ServiceVolume.ConsoleTests
 {
-    using GeneralService.Core.Statistics;
+    using Core.Statistics;
+
     class Program
     {
         
         static void Main(string[] args)
         {
-            WeixinQueryStatistics weixinQS = new WeixinQueryStatistics();
-            WebQueryStatistics webQS = new WebQueryStatistics();
+            GjjBookingStatistics gbs = new GjjBookingStatistics();
+            DateTime dtBegin = Convert.ToDateTime("2017-7-1");
+            DateTime dtEnd = Convert.ToDateTime("2017-7-31");
 
-            var date = Convert.ToDateTime("2017-01-01");
-            var logDir = @"F:\Log";
-
-            var weixinQSVol = weixinQS.getWeixinQueryStatistics(logDir, date);
-            var webQSVol = webQS.getWebQueryStatistics(logDir, date);
-
-            Console.WriteLine(weixinQSVol);
-            Console.WriteLine(webQSVol);
-            Console.ReadKey();
+            Console.Write(gbs.BookingPlatFormVolumnStatistics(dtBegin, dtEnd));
         }
     }
 }
