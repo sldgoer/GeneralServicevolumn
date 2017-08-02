@@ -1,18 +1,18 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using GeneralService.Core.Statistics.Statistics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeneralService.ServiceVolume.ConsoleTests
+namespace GeneralService.Core.Statistics.Statistics.Tests
 {
-    using Core.Statistics;
-    
-
-    class Program
+    [TestClass()]
+    public class JmgjjPreliminaryStatisticsTests
     {
-        
-        static void Main(string[] args)
+        [TestMethod()]
+        public void PrePersonBusinessStatisticsTest()
         {
             JmgjjPreliminaryStatistics jps = new JmgjjPreliminaryStatistics();
             DateTime dtBegin = Convert.ToDateTime("2017-1-1");
@@ -20,9 +20,7 @@ namespace GeneralService.ServiceVolume.ConsoleTests
 
 
             Console.Write(jps.PrePersonBusinessStatistics(dtBegin, dtEnd));
-
-            //Console.Write(gbs.BookingPlatFormVolumnStatistics(dtBegin, dtEnd));
-            Console.ReadKey();
+            //Assert.Fail();
         }
     }
 }

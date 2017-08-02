@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JmgjjPreliminaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="A030PreUnit">
+          <Key>
+            <PropertyRef Name="puid" />
+          </Key>
+          <Property Name="puid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="uName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="uAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="license" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="isSync" Type="bit" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="200" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A033PreFetch">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="aId" Type="int" />
+          <Property Name="uId" Type="int" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="fetchType" Type="nvarchar" MaxLength="50" />
+          <Property Name="fetchMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="filePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="200" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A034preAccount">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="uAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="uName" Type="nvarchar" MaxLength="500" />
+          <Property Name="aCount" Type="int" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="500" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A035preLockAndUnLock">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="uAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="uName" Type="nvarchar" MaxLength="500" />
+          <Property Name="aCount" Type="int" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="isFengcun" Type="bit" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="500" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A036preBuJiao">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="uAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="uName" Type="nvarchar" MaxLength="500" />
+          <Property Name="aCount" Type="int" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="500" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A037preJctz">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="uAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="uName" Type="nvarchar" MaxLength="500" />
+          <Property Name="aCount" Type="int" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="500" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A038TranIn">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="uAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="uName" Type="nvarchar" MaxLength="500" />
+          <Property Name="aCount" Type="int" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="500" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityContainer Name="JmgjjPreliminaryModelStoreContainer">
+          <EntitySet Name="A030PreUnit" EntityType="Self.A030PreUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A033PreFetch" EntityType="Self.A033PreFetch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A034preAccount" EntityType="Self.A034preAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A035preLockAndUnLock" EntityType="Self.A035preLockAndUnLock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A036preBuJiao" EntityType="Self.A036preBuJiao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A037preJctz" EntityType="Self.A037preJctz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A038TranIn" EntityType="Self.A038TranIn" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JmgjjPreliminaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="A030PreUnit">
+          <Key>
+            <PropertyRef Name="puid" />
+          </Key>
+          <Property Name="puid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="uName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="license" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isSync" Type="Boolean" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A033PreFetch">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="aId" Type="Int32" />
+          <Property Name="uId" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fetchType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fetchMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A034preAccount">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="uAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aCount" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A035preLockAndUnLock">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="uAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aCount" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isFengcun" Type="Boolean" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A036preBuJiao">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="uAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aCount" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A037preJctz">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="uAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aCount" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A038TranIn">
+          <Key>
+            <PropertyRef Name="responsNum" />
+          </Key>
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="uAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aCount" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityContainer Name="JmgjjPreliminaryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="A030PreUnit" EntityType="Self.A030PreUnit" />
+          <EntitySet Name="A033PreFetch" EntityType="Self.A033PreFetch" />
+          <EntitySet Name="A034preAccount" EntityType="Self.A034preAccount" />
+          <EntitySet Name="A035preLockAndUnLock" EntityType="Self.A035preLockAndUnLock" />
+          <EntitySet Name="A036preBuJiao" EntityType="Self.A036preBuJiao" />
+          <EntitySet Name="A037preJctz" EntityType="Self.A037preJctz" />
+          <EntitySet Name="A038TranIn" EntityType="Self.A038TranIn" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JmgjjPreliminaryModelStoreContainer" CdmEntityContainer="JmgjjPreliminaryEntities">
+          <EntitySetMapping Name="A030PreUnit">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A030PreUnit">
+              <MappingFragment StoreEntitySet="A030PreUnit">
+                <ScalarProperty Name="puid" ColumnName="puid" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="uAccount" ColumnName="uAccount" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="license" ColumnName="license" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentTel" ColumnName="agentTel" />
+                <ScalarProperty Name="isSync" ColumnName="isSync" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A033PreFetch">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A033PreFetch">
+              <MappingFragment StoreEntitySet="A033PreFetch">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="aId" ColumnName="aId" />
+                <ScalarProperty Name="uId" ColumnName="uId" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="fetchType" ColumnName="fetchType" />
+                <ScalarProperty Name="fetchMoney" ColumnName="fetchMoney" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="filePath" ColumnName="filePath" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A034preAccount">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A034preAccount">
+              <MappingFragment StoreEntitySet="A034preAccount">
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="uAccount" ColumnName="uAccount" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="aCount" ColumnName="aCount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentTel" ColumnName="agentTel" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A035preLockAndUnLock">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A035preLockAndUnLock">
+              <MappingFragment StoreEntitySet="A035preLockAndUnLock">
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="uAccount" ColumnName="uAccount" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="aCount" ColumnName="aCount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentTel" ColumnName="agentTel" />
+                <ScalarProperty Name="isFengcun" ColumnName="isFengcun" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A036preBuJiao">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A036preBuJiao">
+              <MappingFragment StoreEntitySet="A036preBuJiao">
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="uAccount" ColumnName="uAccount" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="aCount" ColumnName="aCount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentTel" ColumnName="agentTel" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A037preJctz">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A037preJctz">
+              <MappingFragment StoreEntitySet="A037preJctz">
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="uAccount" ColumnName="uAccount" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="aCount" ColumnName="aCount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentTel" ColumnName="agentTel" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A038TranIn">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A038TranIn">
+              <MappingFragment StoreEntitySet="A038TranIn">
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="uAccount" ColumnName="uAccount" />
+                <ScalarProperty Name="uName" ColumnName="uName" />
+                <ScalarProperty Name="aCount" ColumnName="aCount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="agentName" ColumnName="agentName" />
+                <ScalarProperty Name="agentTel" ColumnName="agentTel" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

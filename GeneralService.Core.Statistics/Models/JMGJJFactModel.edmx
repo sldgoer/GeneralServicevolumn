@@ -1,0 +1,1843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JMGJJFactModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="t_account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="u_id" Type="int" Nullable="false" />
+          <Property Name="Id_Card" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="255" />
+          <Property Name="workdate" Type="datetime" />
+          <Property Name="c_date" Type="datetime" />
+          <Property Name="Bank" Type="int" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="u_money" Type="money" />
+          <Property Name="i_money" Type="money" />
+          <Property Name="Money" Type="money" />
+          <Property Name="accrual" Type="money" />
+          <Property Name="Status" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="8000" />
+          <Property Name="sign_tag" Type="int" Nullable="false" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="input_time" Type="datetime" Nullable="false" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="number_id" Type="varchar" MaxLength="255" />
+          <Property Name="u_name" Type="varchar" MaxLength="255" />
+          <Property Name="money_backup" Type="money" />
+          <Property Name="fgb_account" Type="varchar" MaxLength="255" />
+          <Property Name="u_account" Type="varchar" MaxLength="255" />
+          <Property Name="tel" Type="varchar" MaxLength="255" />
+          <Property Name="mobile" Type="varchar" MaxLength="255" />
+          <Property Name="bank_card" Type="varchar" MaxLength="255" />
+          <Property Name="Render_Money" Type="money" />
+          <Property Name="bank_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="end_date" Type="datetime" />
+          <Property Name="xml_id" Type="int" />
+          <Property Name="fact_date" Type="datetime" />
+          <Property Name="bili" Type="float" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="corp_type" Type="varchar" MaxLength="20" />
+          <Property Name="corp_code" Type="varchar" MaxLength="255" />
+          <Property Name="u_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="varchar" MaxLength="255" />
+          <Property Name="i_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="account_backup" Type="varchar" MaxLength="255" />
+          <Property Name="noNumberId" Type="int" />
+          <Property Name="is_loan_otherarea_tag" Type="bit" />
+          <Property Name="render_city" Type="varchar" MaxLength="255" />
+          <Property Name="openMoney" Type="money" />
+          <Property Name="is_id_card" Type="bit" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="NewBalance" Type="money" />
+          <Property Name="GLMen" Type="varchar" MaxLength="100" />
+          <Property Name="18BitIdCard" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="t_account_autofetch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datalevel" Type="int" />
+          <Property Name="loan_id" Type="int" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" />
+          <Property Name="input_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="sign_tag" Type="int" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="number_id" Type="varchar" MaxLength="255" />
+          <Property Name="accrual_i" Type="money" />
+          <Property Name="accrual_b" Type="money" />
+          <Property Name="print_tag" Type="int" />
+          <Property Name="sign_date" Type="datetime" />
+          <Property Name="begin_date" Type="datetime" />
+          <Property Name="cancel_time" Type="datetime" />
+          <Property Name="cancel_user" Type="varchar" MaxLength="255" />
+          <Property Name="up_limit_money" Type="money" />
+          <Property Name="a_id" Type="int" />
+          <Property Name="relate_id" Type="varchar" MaxLength="1000" />
+          <Property Name="remark" Type="varchar" MaxLength="3000" />
+          <Property Name="LoanAccount" Type="varchar" MaxLength="255" />
+          <Property Name="BizLoanAccount" Type="varchar" MaxLength="255" />
+          <Property Name="stop_date" Type="datetime" />
+          <Property Name="zhifumima" Type="varchar" MaxLength="255" />
+          <Property Name="receptor" Type="varchar" MaxLength="255" />
+          <Property Name="recept_account" Type="varchar" MaxLength="255" />
+          <Property Name="recept_bank" Type="int" />
+          <Property Name="notice_id" Type="int" />
+          <Property Name="notice_str" Type="varchar" MaxLength="255" />
+          <Property Name="print_date" Type="datetime" />
+          <Property Name="biz_loan_balance" Type="money" />
+          <Property Name="loan_balance" Type="money" />
+          <Property Name="up_limit_term" Type="int" />
+          <Property Name="lapse_date" Type="datetime" />
+          <Property Name="AVG_GiveBack_Money" Type="money" />
+          <Property Name="Biz_AVG_GiveBack_Money" Type="money" />
+          <Property Name="giveback_account" Type="varchar" MaxLength="255" />
+          <Property Name="account_name" Type="varchar" MaxLength="255" />
+          <Property Name="Is_BankTransfer" Type="bit" />
+          <Property Name="Bank_Card" Type="varchar" MaxLength="255" />
+          <Property Name="LoanBDate" Type="datetime" />
+          <Property Name="LoanEDate" Type="datetime" />
+          <Property Name="BizLoanBDate" Type="datetime" />
+          <Property Name="BizLoanEDate" Type="datetime" />
+          <Property Name="LoanTerm" Type="int" />
+          <Property Name="BizLoanTerm" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="u_name" Type="varchar" MaxLength="255" />
+          <Property Name="id_card" Type="varchar" MaxLength="255" />
+          <Property Name="old_loan_id" Type="int" />
+          <Property Name="Cancel_Id" Type="int" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Backup_sign_time" Type="datetime" />
+          <Property Name="Fact_Cancel" Type="bit" />
+          <Property Name="Old_Sign_tag" Type="int" />
+        </EntityType>
+        <EntityType Name="t_account_company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="input_user" Type="varchar" MaxLength="25" />
+          <Property Name="input_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="25" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="sign_user" Type="varchar" MaxLength="25" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="25" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_tag" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="corp_name" Type="varchar" MaxLength="255" />
+          <Property Name="corp_quality" Type="int" />
+          <Property Name="corp_type" Type="int" />
+          <Property Name="fund_c_date" Type="datetime" />
+          <Property Name="linkman" Type="varchar" MaxLength="55" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="E_mail" Type="varchar" MaxLength="55" />
+          <Property Name="ip_address" Type="varchar" MaxLength="255" />
+          <Property Name="charge_dept" Type="varchar" MaxLength="255" />
+          <Property Name="income_source" Type="varchar" MaxLength="255" />
+          <Property Name="u_proportion" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="og_code_id" Type="varchar" MaxLength="55" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+          <Property Name="number_id" Type="varchar" MaxLength="25" />
+          <Property Name="table_code_id" Type="int" />
+          <Property Name="fund_type" Type="int" />
+          <Property Name="bank_for_unit" Type="int" />
+          <Property Name="bank_open_date" Type="datetime" />
+          <Property Name="u_account" Type="varchar" MaxLength="50" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="corp_code" Type="varchar" MaxLength="50" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="otherarea_tag" Type="bit" />
+          <Property Name="organ_type" Type="int" />
+          <Property Name="economy_type" Type="int" />
+          <Property Name="industry_type" Type="int" />
+          <Property Name="belong_type" Type="int" />
+          <Property Name="found_date" Type="datetime" />
+          <Property Name="charge_unit_name" Type="varchar" MaxLength="500" />
+          <Property Name="post_code" Type="varchar" MaxLength="30" />
+          <Property Name="begin_render_date" Type="datetime" />
+          <Property Name="mobile_phone" Type="varchar" MaxLength="55" />
+          <Property Name="principal" Type="varchar" MaxLength="255" />
+          <Property Name="principal_phone" Type="varchar" MaxLength="55" />
+          <Property Name="principal_mobile_phone" Type="varchar" MaxLength="55" />
+          <Property Name="charge_unit_principal" Type="varchar" MaxLength="255" />
+          <Property Name="charge_unit_principal_phone" Type="varchar" MaxLength="255" />
+          <Property Name="approval_unit" Type="varchar" MaxLength="255" />
+          <Property Name="approval_document" Type="varchar" MaxLength="255" />
+          <Property Name="leagal_person_name" Type="varchar" MaxLength="100" />
+          <Property Name="leagal_person_cert_type" Type="int" />
+          <Property Name="leagal_person_cert_num" Type="varchar" MaxLength="255" />
+          <Property Name="leagal_person_phone" Type="varchar" MaxLength="55" />
+          <Property Name="leagal_person_mobile_phone" Type="varchar" MaxLength="55" />
+          <Property Name="leagal_person_email" Type="varchar" MaxLength="55" />
+          <Property Name="id_card_num" Type="varchar" MaxLength="55" />
+          <Property Name="callingupbuild_no" Type="varchar" MaxLength="255" />
+          <Property Name="is_cj" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="DepID" Type="int" />
+          <Property Name="DWXZ" Type="varchar" MaxLength="50" />
+          <Property Name="Old_U_BiLi" Type="int" />
+        </EntityType>
+        <EntityType Name="t_account_fetch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="a_id" Type="int" />
+          <Property Name="u_id" Type="int" />
+          <Property Name="bank" Type="int" />
+          <Property Name="account" Type="varchar" MaxLength="255" />
+          <Property Name="sign_item" Type="int" />
+          <Property Name="sign_money" Type="money" />
+          <Property Name="fact_money" Type="money" />
+          <Property Name="sign_date" Type="datetime" />
+          <Property Name="fact_date" Type="datetime" />
+          <Property Name="accrual" Type="money" />
+          <Property Name="logout_tag" Type="bit" Nullable="false" />
+          <Property Name="remark" Type="varchar" MaxLength="8000" />
+          <Property Name="sign_tag" Type="int" Nullable="false" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="input_time" Type="datetime" Nullable="false" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="confirm_user" Type="varchar" MaxLength="255" />
+          <Property Name="confirm_time" Type="datetime" />
+          <Property Name="test_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_id_card" Type="varchar" MaxLength="255" />
+          <Property Name="fgb_account" Type="varchar" MaxLength="255" />
+          <Property Name="back_date" Type="datetime" />
+          <Property Name="tickit_remark" Type="varchar" MaxLength="8000" />
+          <Property Name="out_tag" Type="int" />
+          <Property Name="number_id" Type="varchar" MaxLength="25" />
+          <Property Name="bank_card" Type="varchar" MaxLength="255" />
+          <Property Name="bank_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="xml_id" Type="int" />
+          <Property Name="end_month" Type="datetime" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="over_area_unit_name" Type="varchar" MaxLength="50" />
+          <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="begin_fetch_month" Type="datetime" />
+          <Property Name="end_fetch_month" Type="datetime" />
+          <Property Name="after_money" Type="money" />
+          <Property Name="ZhiFuMiMa" Type="varchar" MaxLength="255" />
+          <Property Name="sign_opinion" Type="varchar" MaxLength="255" />
+          <Property Name="deposit_id" Type="varchar" MaxLength="255" />
+          <Property Name="deposit_name" Type="varchar" MaxLength="255" />
+          <Property Name="is_delete" Type="int" />
+          <Property Name="pre_account_status" Type="int" />
+          <Property Name="K3HandBillRefPiHao" Type="varchar" MaxLength="50" />
+          <Property Name="out_tag_accrual" Type="int" />
+          <Property Name="K3HandBillRefPiHao_accrual" Type="varchar" MaxLength="255" />
+          <Property Name="noNumberId" Type="int" />
+          <Property Name="loan_id" Type="varchar" MaxLength="1000" />
+          <Property Name="notice_id" Type="int" />
+          <Property Name="notice_str" Type="varchar" MaxLength="50" />
+          <Property Name="person_logout_first_tag" Type="bit" />
+          <Property Name="open_bank" Type="int" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="is_AutoFetch" Type="bit" />
+        </EntityType>
+        <EntityType Name="t_account_loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="new_id" Type="int" />
+          <Property Name="male_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="male_u_id" Type="int" />
+          <Property Name="male_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="male_id_card" Type="varchar" MaxLength="255" />
+          <Property Name="female_name" Type="varchar" MaxLength="255" />
+          <Property Name="female_u_id" Type="int" />
+          <Property Name="female_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="female_id_card" Type="varchar" MaxLength="255" />
+          <Property Name="pledge_address" Type="varchar" MaxLength="255" />
+          <Property Name="loan_target" Type="money" />
+          <Property Name="b_date" Type="datetime" />
+          <Property Name="e_date" Type="datetime" />
+          <Property Name="loan_money" Type="money" />
+          <Property Name="loan_term" Type="int" />
+          <Property Name="a_date" Type="datetime" />
+          <Property Name="sign_date" Type="datetime" />
+          <Property Name="loan_date" Type="datetime" />
+          <Property Name="bank" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="8000" />
+          <Property Name="loan_tag" Type="bit" />
+          <Property Name="return_tag" Type="bit" />
+          <Property Name="sign_tag" Type="int" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" />
+          <Property Name="input_time" Type="datetime" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="pici" Type="money" />
+          <Property Name="number_id" Type="varchar" MaxLength="255" />
+          <Property Name="fgb_account" Type="varchar" MaxLength="255" />
+          <Property Name="xml_id" Type="int" />
+          <Property Name="AddLoan_Tag" Type="bit" Nullable="false" />
+          <Property Name="out_tag" Type="int" />
+          <Property Name="tickit_remark" Type="varchar" MaxLength="8000" />
+          <Property Name="return_date" Type="datetime" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="over_area_unit_name" Type="varchar" MaxLength="255" />
+          <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="cancel_date" Type="datetime" Nullable="false" />
+          <Property Name="repay_type" Type="tinyint" Nullable="false" />
+          <Property Name="monthly_rate" Type="float" Nullable="false" />
+          <Property Name="account" Type="varchar" MaxLength="255" />
+          <Property Name="ShouFangUnit" Type="varchar" MaxLength="255" />
+          <Property Name="HomeAdress" Type="varchar" MaxLength="255" />
+          <Property Name="HomeType" Type="int" />
+          <Property Name="BuildQuality" Type="int" />
+          <Property Name="MianJi" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ContractNumber" Type="varchar" MaxLength="255" />
+          <Property Name="ToTalCost" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="HandInCost" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="HandInPercent" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="IsCombinateLoan" Type="bit" />
+          <Property Name="BizLoanMoney" Type="money" />
+          <Property Name="BizLoanTerm" Type="int" />
+          <Property Name="GiveBackAccount" Type="varchar" MaxLength="255" />
+          <Property Name="DiYaCondition" Type="int" />
+          <Property Name="fore_confirm_user" Type="varchar" MaxLength="255" />
+          <Property Name="fore_confirm_time" Type="datetime" />
+          <Property Name="final_confirm_user" Type="varchar" MaxLength="255" />
+          <Property Name="final_confirm_time" Type="datetime" />
+          <Property Name="ZhiFuMiMa" Type="varchar" MaxLength="255" />
+          <Property Name="notice_id" Type="int" />
+          <Property Name="K3HandBillRefPiHao" Type="varchar" MaxLength="50" />
+          <Property Name="render_money" Type="money" />
+          <Property Name="noNumberID" Type="int" />
+          <Property Name="is_net_data_tag" Type="bit" />
+          <Property Name="net_data_input_time" Type="datetime" />
+          <Property Name="refuse_time" Type="datetime" />
+          <Property Name="refuse_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_opinion" Type="varchar" MaxLength="255" />
+          <Property Name="autofetch_tag" Type="int" />
+          <Property Name="bank_b_date" Type="datetime" />
+          <Property Name="bank_e_date" Type="datetime" />
+          <Property Name="final_modify_time" Type="datetime" />
+          <Property Name="final_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="fore_modify_time" Type="datetime" />
+          <Property Name="fore_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="BizLoanAccount" Type="varchar" MaxLength="255" />
+          <Property Name="bank_account_id" Type="varchar" MaxLength="50" />
+          <Property Name="IsAutoFetch" Type="bit" />
+          <Property Name="Year_Rate" Type="float" />
+          <Property Name="Receive_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Receive_Account" Type="varchar" MaxLength="255" />
+          <Property Name="Rate_Flow" Type="float" />
+          <Property Name="NSign_tag" Type="int" />
+          <Property Name="R_D" Type="datetime" />
+          <Property Name="R_U" Type="char" MaxLength="1" />
+          <Property Name="HouseNum" Type="int" />
+          <Property Name="RECBank" Type="int" />
+          <Property Name="ESTVakye" Type="money" />
+          <Property Name="GBAName" Type="varchar" MaxLength="255" />
+          <Property Name="notice_str" Type="varchar" MaxLength="50" />
+          <Property Name="IsBankInput" Type="bit" />
+          <Property Name="BackToBank" Type="bit" />
+          <Property Name="BankInputer" Type="varchar" MaxLength="50" />
+          <Property Name="BankInputTime" Type="datetime" />
+          <Property Name="SF_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="ZJJG" Type="varchar" MaxLength="50" />
+          <Property Name="ZJ_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="JBR_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="LH_Date" Type="datetime" />
+          <Property Name="LH_H" Type="int" />
+          <Property Name="LH_Remark" Type="varchar" MaxLength="100" />
+          <Property Name="LH_HTDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="t_account_lock_and_unlock">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="a_id" Type="int" />
+          <Property Name="u_id" Type="int" Nullable="false" />
+          <Property Name="account" Type="varchar" MaxLength="255" />
+          <Property Name="c_date" Type="datetime" />
+          <Property Name="fact_date" Type="datetime" />
+          <Property Name="end_month" Type="datetime" />
+          <Property Name="balance" Type="money" />
+          <Property Name="bank" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="8000" />
+          <Property Name="sign_tag" Type="int" />
+          <Property Name="tag" Type="int" Nullable="false" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="input_time" Type="datetime" Nullable="false" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="test_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_id_card" Type="varchar" MaxLength="255" />
+          <Property Name="sign_money" Type="money" />
+          <Property Name="number_id" Type="varchar" MaxLength="255" />
+          <Property Name="bank_card" Type="varchar" MaxLength="255" />
+          <Property Name="xml_id" Type="int" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="over_area_unit_name" Type="varchar" MaxLength="255" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="after_money" Type="money" />
+          <Property Name="ZhiFuMiMa" Type="varchar" MaxLength="255" />
+          <Property Name="is_delete" Type="int" />
+          <Property Name="noNumberId" Type="int" />
+          <Property Name="unit_lock_finally_tag" Type="bit" />
+          <Property Name="pre_account_status" Type="int" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="IsRenderAdjust" Type="bit" />
+          <Property Name="s_id" Type="int" />
+          <Property Name="EmpID" Type="int" />
+        </EntityType>
+        <EntityType Name="t_account_patch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fgb_account" Type="varchar" MaxLength="25" />
+          <Property Name="u_name" Type="varchar" MaxLength="255" />
+          <Property Name="bank" Type="int" Nullable="false" />
+          <Property Name="bank_card" Type="varchar" MaxLength="25" />
+          <Property Name="a_id" Type="int" Nullable="false" />
+          <Property Name="u_id" Type="int" />
+          <Property Name="id_card" Type="varchar" MaxLength="50" />
+          <Property Name="account" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="repair_money" Type="money" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="begin_date" Type="datetime" Nullable="false" />
+          <Property Name="end_date" Type="datetime" Nullable="false" />
+          <Property Name="tag" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="8000" />
+          <Property Name="xml_id" Type="int" />
+          <Property Name="out_tag" Type="int" />
+          <Property Name="tickit_remark" Type="varchar" MaxLength="8000" />
+          <Property Name="sign_tag" Type="int" />
+          <Property Name="input_user" Type="varchar" MaxLength="25" />
+          <Property Name="input_time" Type="datetime" />
+          <Property Name="sign_user" Type="varchar" MaxLength="25" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="over_area_unit_name" Type="varchar" MaxLength="255" />
+          <Property Name="bill_no" Type="varchar" MaxLength="25" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="after_money" Type="money" />
+          <Property Name="sign_date" Type="datetime" />
+          <Property Name="u_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="i_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="is_margin_patch_tag" Type="bit" />
+          <Property Name="is_delete" Type="int" />
+          <Property Name="number_id" Type="varchar" MaxLength="50" />
+          <Property Name="salary_amount" Type="money" />
+          <Property Name="noNumberID" Type="int" />
+          <Property Name="u_repair_money" Type="money" />
+          <Property Name="i_repair_money" Type="money" />
+          <Property Name="K3HandBillRefPiHao" Type="varchar" MaxLength="255" />
+          <Property Name="transfer_in_tag" Type="bit" />
+          <Property Name="is_ration_patch_tag" Type="bit" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="25" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="25" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="delete_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="t_account_transfer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="a_id" Type="int" />
+          <Property Name="out_unit_id" Type="int" Nullable="false" />
+          <Property Name="in_unit_id" Type="int" Nullable="false" />
+          <Property Name="out_bank" Type="int" />
+          <Property Name="in_bank" Type="int" />
+          <Property Name="out_account" Type="varchar" MaxLength="255" />
+          <Property Name="in_account" Type="varchar" MaxLength="255" />
+          <Property Name="balance" Type="money" />
+          <Property Name="c_date" Type="datetime" />
+          <Property Name="fact_date" Type="datetime" />
+          <Property Name="fact_money" Type="money" />
+          <Property Name="accrual" Type="money" />
+          <Property Name="end_month" Type="datetime" />
+          <Property Name="tag" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+          <Property Name="sign_tag" Type="int" Nullable="false" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="input_time" Type="datetime" Nullable="false" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="test_out_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_in_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="test_id_card" Type="varchar" MaxLength="255" />
+          <Property Name="sign_money" Type="money" />
+          <Property Name="sign_confirm" Type="int" />
+          <Property Name="fgb_account" Type="varchar" MaxLength="255" />
+          <Property Name="back_date" Type="datetime" />
+          <Property Name="tickit_remark" Type="varchar" MaxLength="8000" />
+          <Property Name="out_tag" Type="int" />
+          <Property Name="number_id" Type="varchar" MaxLength="25" />
+          <Property Name="out_tag_out" Type="int" />
+          <Property Name="xml_in_id" Type="int" />
+          <Property Name="xml_out_id" Type="int" />
+          <Property Name="To_Forign_Tag" Type="bit" />
+          <Property Name="out_fact_date" Type="datetime" />
+          <Property Name="in_fact_date" Type="datetime" />
+          <Property Name="to_area" Type="int" />
+          <Property Name="out_area_tag" Type="bit" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="over_area_unit_name" Type="varchar" MaxLength="255" />
+          <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="after_money" Type="money" />
+          <Property Name="ZhiFuMiMa" Type="varchar" MaxLength="255" />
+          <Property Name="in_unit_name" Type="varchar" MaxLength="255" />
+          <Property Name="is_delete" Type="int" />
+          <Property Name="pre_account_status" Type="int" />
+          <Property Name="in_after_money" Type="money" />
+          <Property Name="K3HandBillRefPiHao" Type="varchar" MaxLength="50" />
+          <Property Name="K3HandBillRefPiHao_out" Type="varchar" MaxLength="50" />
+          <Property Name="out_tag_accrual" Type="int" />
+          <Property Name="K3HandBillRefPiHao_accrual" Type="varchar" MaxLength="255" />
+          <Property Name="out_noNumberId" Type="int" />
+          <Property Name="in_noNumberId" Type="int" />
+          <Property Name="notice_id" Type="int" />
+          <Property Name="notice_str" Type="varchar" MaxLength="50" />
+          <Property Name="is_combine_tag" Type="bit" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="is_BankChange_tag" Type="bit" />
+          <Property Name="in_unit_account" Type="varchar" MaxLength="255" />
+          <Property Name="combine_id" Type="int" />
+          <Property Name="sub_tag" Type="bit" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InACName" Type="varchar" MaxLength="255" />
+          <Property Name="InACAccount" Type="varchar" MaxLength="255" />
+          <Property Name="delete_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="t_salary_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="u_id" Type="int" Nullable="false" />
+          <Property Name="u_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="id_card" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="account" Type="varchar" MaxLength="50" />
+          <Property Name="work_date" Type="datetime" />
+          <Property Name="Salary" Type="money" Nullable="false" />
+          <Property Name="bili" Type="float" />
+          <Property Name="render_money" Type="money" Nullable="false" />
+          <Property Name="adjust_date" Type="datetime" Nullable="false" />
+          <Property Name="a_id" Type="int" />
+          <Property Name="import_tag" Type="bit" Nullable="false" />
+          <Property Name="selected" Type="int" />
+          <Property Name="input_user" Type="varchar" MaxLength="50" />
+          <Property Name="input_time" Type="datetime" />
+          <Property Name="import_user" Type="varchar" MaxLength="50" />
+          <Property Name="import_time" Type="datetime" />
+          <Property Name="excel_row" Type="int" Nullable="false" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="over_area_unit_name" Type="varchar" MaxLength="255" />
+          <Property Name="u_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="is_delete" Type="int" />
+          <Property Name="i_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="is_ration_adjust_tag" Type="bit" />
+          <Property Name="pre_salary" Type="money" />
+          <Property Name="pre_render_money" Type="money" />
+          <Property Name="pre_u_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="pre_i_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="pre_u_money" Type="money" />
+          <Property Name="pre_i_money" Type="money" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="is_TransferAdjust_tag" Type="bit" />
+          <Property Name="remark" Type="varchar" MaxLength="255" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="number_id" Type="char" MaxLength="14" />
+        </EntityType>
+        <EntityContainer Name="JMGJJFactModelStoreContainer">
+          <EntitySet Name="t_account" EntityType="Self.t_account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_autofetch" EntityType="Self.t_account_autofetch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_company" EntityType="Self.t_account_company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_fetch" EntityType="Self.t_account_fetch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_loan" EntityType="Self.t_account_loan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_lock_and_unlock" EntityType="Self.t_account_lock_and_unlock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_patch" EntityType="Self.t_account_patch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account_transfer" EntityType="Self.t_account_transfer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_salary_info" EntityType="Self.t_salary_info" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JMGJJFactModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="t_account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="u_id" Type="Int32" Nullable="false" />
+          <Property Name="Id_Card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="workdate" Type="DateTime" Precision="3" />
+          <Property Name="c_date" Type="DateTime" Precision="3" />
+          <Property Name="Bank" Type="Int32" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="u_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="i_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="accrual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sign_tag" Type="Int32" Nullable="false" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="input_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="number_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="money_backup" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fgb_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bank_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Render_Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="bank_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="end_date" Type="DateTime" Precision="3" />
+          <Property Name="xml_id" Type="Int32" />
+          <Property Name="fact_date" Type="DateTime" Precision="3" />
+          <Property Name="bili" Type="Double" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="corp_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="corp_code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="i_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="account_backup" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="noNumberId" Type="Int32" />
+          <Property Name="is_loan_otherarea_tag" Type="Boolean" />
+          <Property Name="render_city" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="openMoney" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="is_id_card" Type="Boolean" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="NewBalance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="GLMen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="C18BitIdCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_account_autofetch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datalevel" Type="Int32" />
+          <Property Name="loan_id" Type="Int32" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="input_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_tag" Type="Int32" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="number_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accrual_i" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="accrual_b" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="print_tag" Type="Int32" />
+          <Property Name="sign_date" Type="DateTime" Precision="3" />
+          <Property Name="begin_date" Type="DateTime" Precision="3" />
+          <Property Name="cancel_time" Type="DateTime" Precision="3" />
+          <Property Name="cancel_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="up_limit_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="a_id" Type="Int32" />
+          <Property Name="relate_id" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="LoanAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BizLoanAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="stop_date" Type="DateTime" Precision="3" />
+          <Property Name="zhifumima" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="receptor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="recept_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="recept_bank" Type="Int32" />
+          <Property Name="notice_id" Type="Int32" />
+          <Property Name="notice_str" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="print_date" Type="DateTime" Precision="3" />
+          <Property Name="biz_loan_balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="loan_balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="up_limit_term" Type="Int32" />
+          <Property Name="lapse_date" Type="DateTime" Precision="3" />
+          <Property Name="AVG_GiveBack_Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Biz_AVG_GiveBack_Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="giveback_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="account_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Is_BankTransfer" Type="Boolean" />
+          <Property Name="Bank_Card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LoanBDate" Type="DateTime" Precision="3" />
+          <Property Name="LoanEDate" Type="DateTime" Precision="3" />
+          <Property Name="BizLoanBDate" Type="DateTime" Precision="3" />
+          <Property Name="BizLoanEDate" Type="DateTime" Precision="3" />
+          <Property Name="LoanTerm" Type="Int32" />
+          <Property Name="BizLoanTerm" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="old_loan_id" Type="Int32" />
+          <Property Name="Cancel_Id" Type="Int32" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="Backup_sign_time" Type="DateTime" Precision="3" />
+          <Property Name="Fact_Cancel" Type="Boolean" />
+          <Property Name="Old_Sign_tag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="t_account_company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="input_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="input_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_tag" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="corp_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="corp_quality" Type="Int32" />
+          <Property Name="corp_type" Type="Int32" />
+          <Property Name="fund_c_date" Type="DateTime" Precision="3" />
+          <Property Name="linkman" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="E_mail" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="ip_address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="charge_dept" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="income_source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_proportion" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="og_code_id" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="number_id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="table_code_id" Type="Int32" />
+          <Property Name="fund_type" Type="Int32" />
+          <Property Name="bank_for_unit" Type="Int32" />
+          <Property Name="bank_open_date" Type="DateTime" Precision="3" />
+          <Property Name="u_account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="corp_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="otherarea_tag" Type="Boolean" />
+          <Property Name="organ_type" Type="Int32" />
+          <Property Name="economy_type" Type="Int32" />
+          <Property Name="industry_type" Type="Int32" />
+          <Property Name="belong_type" Type="Int32" />
+          <Property Name="found_date" Type="DateTime" Precision="3" />
+          <Property Name="charge_unit_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="post_code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="begin_render_date" Type="DateTime" Precision="3" />
+          <Property Name="mobile_phone" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="principal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="principal_phone" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="principal_mobile_phone" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="charge_unit_principal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="charge_unit_principal_phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="approval_unit" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="approval_document" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="leagal_person_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="leagal_person_cert_type" Type="Int32" />
+          <Property Name="leagal_person_cert_num" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="leagal_person_phone" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="leagal_person_mobile_phone" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="leagal_person_email" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="id_card_num" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="callingupbuild_no" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_cj" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DepID" Type="Int32" />
+          <Property Name="DWXZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Old_U_BiLi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="t_account_fetch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="a_id" Type="Int32" />
+          <Property Name="u_id" Type="Int32" />
+          <Property Name="bank" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_item" Type="Int32" />
+          <Property Name="sign_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fact_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="sign_date" Type="DateTime" Precision="3" />
+          <Property Name="fact_date" Type="DateTime" Precision="3" />
+          <Property Name="accrual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="logout_tag" Type="Boolean" Nullable="false" />
+          <Property Name="remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sign_tag" Type="Int32" Nullable="false" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="input_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="confirm_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="confirm_time" Type="DateTime" Precision="3" />
+          <Property Name="test_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_id_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fgb_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="back_date" Type="DateTime" Precision="3" />
+          <Property Name="tickit_remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="out_tag" Type="Int32" />
+          <Property Name="number_id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="bank_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bank_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="xml_id" Type="Int32" />
+          <Property Name="end_month" Type="DateTime" Precision="3" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="over_area_unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="begin_fetch_month" Type="DateTime" Precision="3" />
+          <Property Name="end_fetch_month" Type="DateTime" Precision="3" />
+          <Property Name="after_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_opinion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="deposit_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="deposit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_delete" Type="Int32" />
+          <Property Name="pre_account_status" Type="Int32" />
+          <Property Name="K3HandBillRefPiHao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="out_tag_accrual" Type="Int32" />
+          <Property Name="K3HandBillRefPiHao_accrual" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="noNumberId" Type="Int32" />
+          <Property Name="loan_id" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="notice_id" Type="Int32" />
+          <Property Name="notice_str" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="person_logout_first_tag" Type="Boolean" />
+          <Property Name="open_bank" Type="Int32" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_AutoFetch" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="t_account_loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="new_id" Type="Int32" />
+          <Property Name="male_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="male_u_id" Type="Int32" />
+          <Property Name="male_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="male_id_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="female_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="female_u_id" Type="Int32" />
+          <Property Name="female_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="female_id_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pledge_address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="loan_target" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="b_date" Type="DateTime" Precision="3" />
+          <Property Name="e_date" Type="DateTime" Precision="3" />
+          <Property Name="loan_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="loan_term" Type="Int32" />
+          <Property Name="a_date" Type="DateTime" Precision="3" />
+          <Property Name="sign_date" Type="DateTime" Precision="3" />
+          <Property Name="loan_date" Type="DateTime" Precision="3" />
+          <Property Name="bank" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="loan_tag" Type="Boolean" />
+          <Property Name="return_tag" Type="Boolean" />
+          <Property Name="sign_tag" Type="Int32" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="input_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="pici" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="number_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fgb_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="xml_id" Type="Int32" />
+          <Property Name="AddLoan_Tag" Type="Boolean" Nullable="false" />
+          <Property Name="out_tag" Type="Int32" />
+          <Property Name="tickit_remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="return_date" Type="DateTime" Precision="3" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="over_area_unit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="cancel_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="repay_type" Type="Byte" Nullable="false" />
+          <Property Name="monthly_rate" Type="Double" Nullable="false" />
+          <Property Name="account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ShouFangUnit" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HomeAdress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HomeType" Type="Int32" />
+          <Property Name="BuildQuality" Type="Int32" />
+          <Property Name="MianJi" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ContractNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ToTalCost" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="HandInCost" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="HandInPercent" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="IsCombinateLoan" Type="Boolean" />
+          <Property Name="BizLoanMoney" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BizLoanTerm" Type="Int32" />
+          <Property Name="GiveBackAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DiYaCondition" Type="Int32" />
+          <Property Name="fore_confirm_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fore_confirm_time" Type="DateTime" Precision="3" />
+          <Property Name="final_confirm_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="final_confirm_time" Type="DateTime" Precision="3" />
+          <Property Name="ZhiFuMiMa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="notice_id" Type="Int32" />
+          <Property Name="K3HandBillRefPiHao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="render_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="noNumberID" Type="Int32" />
+          <Property Name="is_net_data_tag" Type="Boolean" />
+          <Property Name="net_data_input_time" Type="DateTime" Precision="3" />
+          <Property Name="refuse_time" Type="DateTime" Precision="3" />
+          <Property Name="refuse_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_opinion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="autofetch_tag" Type="Int32" />
+          <Property Name="bank_b_date" Type="DateTime" Precision="3" />
+          <Property Name="bank_e_date" Type="DateTime" Precision="3" />
+          <Property Name="final_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="final_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fore_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="fore_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BizLoanAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bank_account_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsAutoFetch" Type="Boolean" />
+          <Property Name="Year_Rate" Type="Double" />
+          <Property Name="Receive_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Receive_Account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Rate_Flow" Type="Double" />
+          <Property Name="NSign_tag" Type="Int32" />
+          <Property Name="R_D" Type="DateTime" Precision="3" />
+          <Property Name="R_U" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="HouseNum" Type="Int32" />
+          <Property Name="RECBank" Type="Int32" />
+          <Property Name="ESTVakye" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="GBAName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="notice_str" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsBankInput" Type="Boolean" />
+          <Property Name="BackToBank" Type="Boolean" />
+          <Property Name="BankInputer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankInputTime" Type="DateTime" Precision="3" />
+          <Property Name="SF_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZJJG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZJ_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JBR_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LH_Date" Type="DateTime" Precision="3" />
+          <Property Name="LH_H" Type="Int32" />
+          <Property Name="LH_Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LH_HTDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="t_account_lock_and_unlock">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="a_id" Type="Int32" />
+          <Property Name="u_id" Type="Int32" Nullable="false" />
+          <Property Name="account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="c_date" Type="DateTime" Precision="3" />
+          <Property Name="fact_date" Type="DateTime" Precision="3" />
+          <Property Name="end_month" Type="DateTime" Precision="3" />
+          <Property Name="balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="bank" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sign_tag" Type="Int32" />
+          <Property Name="tag" Type="Int32" Nullable="false" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="input_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="test_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_id_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="number_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bank_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="xml_id" Type="Int32" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="over_area_unit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="after_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_delete" Type="Int32" />
+          <Property Name="noNumberId" Type="Int32" />
+          <Property Name="unit_lock_finally_tag" Type="Boolean" />
+          <Property Name="pre_account_status" Type="Int32" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsRenderAdjust" Type="Boolean" />
+          <Property Name="s_id" Type="Int32" />
+          <Property Name="EmpID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="t_account_patch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fgb_account" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bank" Type="Int32" Nullable="false" />
+          <Property Name="bank_card" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="a_id" Type="Int32" Nullable="false" />
+          <Property Name="u_id" Type="Int32" />
+          <Property Name="id_card" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="repair_money" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="begin_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="end_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tag" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="xml_id" Type="Int32" />
+          <Property Name="out_tag" Type="Int32" />
+          <Property Name="tickit_remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sign_tag" Type="Int32" />
+          <Property Name="input_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="input_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="over_area_unit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bill_no" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="after_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="sign_date" Type="DateTime" Precision="3" />
+          <Property Name="u_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="i_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="is_margin_patch_tag" Type="Boolean" />
+          <Property Name="is_delete" Type="Int32" />
+          <Property Name="number_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="salary_amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="noNumberID" Type="Int32" />
+          <Property Name="u_repair_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="i_repair_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="K3HandBillRefPiHao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="transfer_in_tag" Type="Boolean" />
+          <Property Name="is_ration_patch_tag" Type="Boolean" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="delete_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="t_account_transfer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="a_id" Type="Int32" />
+          <Property Name="out_unit_id" Type="Int32" Nullable="false" />
+          <Property Name="in_unit_id" Type="Int32" Nullable="false" />
+          <Property Name="out_bank" Type="Int32" />
+          <Property Name="in_bank" Type="Int32" />
+          <Property Name="out_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="in_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="c_date" Type="DateTime" Precision="3" />
+          <Property Name="fact_date" Type="DateTime" Precision="3" />
+          <Property Name="fact_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="accrual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="end_month" Type="DateTime" Precision="3" />
+          <Property Name="tag" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sign_tag" Type="Int32" Nullable="false" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="input_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="test_out_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_in_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="test_id_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="sign_confirm" Type="Int32" />
+          <Property Name="fgb_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="back_date" Type="DateTime" Precision="3" />
+          <Property Name="tickit_remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="out_tag" Type="Int32" />
+          <Property Name="number_id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="out_tag_out" Type="Int32" />
+          <Property Name="xml_in_id" Type="Int32" />
+          <Property Name="xml_out_id" Type="Int32" />
+          <Property Name="To_Forign_Tag" Type="Boolean" />
+          <Property Name="out_fact_date" Type="DateTime" Precision="3" />
+          <Property Name="in_fact_date" Type="DateTime" Precision="3" />
+          <Property Name="to_area" Type="Int32" />
+          <Property Name="out_area_tag" Type="Boolean" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="over_area_unit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="after_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="in_unit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_delete" Type="Int32" />
+          <Property Name="pre_account_status" Type="Int32" />
+          <Property Name="in_after_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="K3HandBillRefPiHao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="K3HandBillRefPiHao_out" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="out_tag_accrual" Type="Int32" />
+          <Property Name="K3HandBillRefPiHao_accrual" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="out_noNumberId" Type="Int32" />
+          <Property Name="in_noNumberId" Type="Int32" />
+          <Property Name="notice_id" Type="Int32" />
+          <Property Name="notice_str" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_combine_tag" Type="Boolean" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_BankChange_tag" Type="Boolean" />
+          <Property Name="in_unit_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="combine_id" Type="Int32" />
+          <Property Name="sub_tag" Type="Boolean" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="InACName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="InACAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="delete_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="t_salary_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_id" Type="Int32" Nullable="false" />
+          <Property Name="u_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_card" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="work_date" Type="DateTime" Precision="3" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="bili" Type="Double" />
+          <Property Name="render_money" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="adjust_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="a_id" Type="Int32" />
+          <Property Name="import_tag" Type="Boolean" Nullable="false" />
+          <Property Name="selected" Type="Int32" />
+          <Property Name="input_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="input_time" Type="DateTime" Precision="3" />
+          <Property Name="import_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="import_time" Type="DateTime" Precision="3" />
+          <Property Name="excel_row" Type="Int32" Nullable="false" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="over_area_unit_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="is_delete" Type="Int32" />
+          <Property Name="i_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="is_ration_adjust_tag" Type="Boolean" />
+          <Property Name="pre_salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pre_render_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pre_u_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="pre_i_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="pre_u_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pre_i_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_TransferAdjust_tag" Type="Boolean" />
+          <Property Name="remark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="number_id" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="JMGJJFactEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="t_account" EntityType="Self.t_account" />
+          <EntitySet Name="t_account_autofetch" EntityType="Self.t_account_autofetch" />
+          <EntitySet Name="t_account_company" EntityType="Self.t_account_company" />
+          <EntitySet Name="t_account_fetch" EntityType="Self.t_account_fetch" />
+          <EntitySet Name="t_account_loan" EntityType="Self.t_account_loan" />
+          <EntitySet Name="t_account_lock_and_unlock" EntityType="Self.t_account_lock_and_unlock" />
+          <EntitySet Name="t_account_patch" EntityType="Self.t_account_patch" />
+          <EntitySet Name="t_account_transfer" EntityType="Self.t_account_transfer" />
+          <EntitySet Name="t_salary_info" EntityType="Self.t_salary_info" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JMGJJFactModelStoreContainer" CdmEntityContainer="JMGJJFactEntities">
+          <EntitySetMapping Name="t_account">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account">
+              <MappingFragment StoreEntitySet="t_account">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="Id_Card" ColumnName="Id_Card" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="workdate" ColumnName="workdate" />
+                <ScalarProperty Name="c_date" ColumnName="c_date" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="u_money" ColumnName="u_money" />
+                <ScalarProperty Name="i_money" ColumnName="i_money" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="accrual" ColumnName="accrual" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="money_backup" ColumnName="money_backup" />
+                <ScalarProperty Name="fgb_account" ColumnName="fgb_account" />
+                <ScalarProperty Name="u_account" ColumnName="u_account" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="bank_card" ColumnName="bank_card" />
+                <ScalarProperty Name="Render_Money" ColumnName="Render_Money" />
+                <ScalarProperty Name="bank_u_name" ColumnName="bank_u_name" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="xml_id" ColumnName="xml_id" />
+                <ScalarProperty Name="fact_date" ColumnName="fact_date" />
+                <ScalarProperty Name="bili" ColumnName="bili" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="corp_type" ColumnName="corp_type" />
+                <ScalarProperty Name="corp_code" ColumnName="corp_code" />
+                <ScalarProperty Name="u_bili" ColumnName="u_bili" />
+                <ScalarProperty Name="ZhiFuMiMa" ColumnName="ZhiFuMiMa" />
+                <ScalarProperty Name="i_bili" ColumnName="i_bili" />
+                <ScalarProperty Name="account_backup" ColumnName="account_backup" />
+                <ScalarProperty Name="noNumberId" ColumnName="noNumberId" />
+                <ScalarProperty Name="is_loan_otherarea_tag" ColumnName="is_loan_otherarea_tag" />
+                <ScalarProperty Name="render_city" ColumnName="render_city" />
+                <ScalarProperty Name="openMoney" ColumnName="openMoney" />
+                <ScalarProperty Name="is_id_card" ColumnName="is_id_card" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="NewBalance" ColumnName="NewBalance" />
+                <ScalarProperty Name="GLMen" ColumnName="GLMen" />
+                <ScalarProperty Name="C18BitIdCard" ColumnName="18BitIdCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_autofetch">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_autofetch">
+              <MappingFragment StoreEntitySet="t_account_autofetch">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="datalevel" ColumnName="datalevel" />
+                <ScalarProperty Name="loan_id" ColumnName="loan_id" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="accrual_i" ColumnName="accrual_i" />
+                <ScalarProperty Name="accrual_b" ColumnName="accrual_b" />
+                <ScalarProperty Name="print_tag" ColumnName="print_tag" />
+                <ScalarProperty Name="sign_date" ColumnName="sign_date" />
+                <ScalarProperty Name="begin_date" ColumnName="begin_date" />
+                <ScalarProperty Name="cancel_time" ColumnName="cancel_time" />
+                <ScalarProperty Name="cancel_user" ColumnName="cancel_user" />
+                <ScalarProperty Name="up_limit_money" ColumnName="up_limit_money" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="relate_id" ColumnName="relate_id" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="LoanAccount" ColumnName="LoanAccount" />
+                <ScalarProperty Name="BizLoanAccount" ColumnName="BizLoanAccount" />
+                <ScalarProperty Name="stop_date" ColumnName="stop_date" />
+                <ScalarProperty Name="zhifumima" ColumnName="zhifumima" />
+                <ScalarProperty Name="receptor" ColumnName="receptor" />
+                <ScalarProperty Name="recept_account" ColumnName="recept_account" />
+                <ScalarProperty Name="recept_bank" ColumnName="recept_bank" />
+                <ScalarProperty Name="notice_id" ColumnName="notice_id" />
+                <ScalarProperty Name="notice_str" ColumnName="notice_str" />
+                <ScalarProperty Name="print_date" ColumnName="print_date" />
+                <ScalarProperty Name="biz_loan_balance" ColumnName="biz_loan_balance" />
+                <ScalarProperty Name="loan_balance" ColumnName="loan_balance" />
+                <ScalarProperty Name="up_limit_term" ColumnName="up_limit_term" />
+                <ScalarProperty Name="lapse_date" ColumnName="lapse_date" />
+                <ScalarProperty Name="AVG_GiveBack_Money" ColumnName="AVG_GiveBack_Money" />
+                <ScalarProperty Name="Biz_AVG_GiveBack_Money" ColumnName="Biz_AVG_GiveBack_Money" />
+                <ScalarProperty Name="giveback_account" ColumnName="giveback_account" />
+                <ScalarProperty Name="account_name" ColumnName="account_name" />
+                <ScalarProperty Name="Is_BankTransfer" ColumnName="Is_BankTransfer" />
+                <ScalarProperty Name="Bank_Card" ColumnName="Bank_Card" />
+                <ScalarProperty Name="LoanBDate" ColumnName="LoanBDate" />
+                <ScalarProperty Name="LoanEDate" ColumnName="LoanEDate" />
+                <ScalarProperty Name="BizLoanBDate" ColumnName="BizLoanBDate" />
+                <ScalarProperty Name="BizLoanEDate" ColumnName="BizLoanEDate" />
+                <ScalarProperty Name="LoanTerm" ColumnName="LoanTerm" />
+                <ScalarProperty Name="BizLoanTerm" ColumnName="BizLoanTerm" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="id_card" ColumnName="id_card" />
+                <ScalarProperty Name="old_loan_id" ColumnName="old_loan_id" />
+                <ScalarProperty Name="Cancel_Id" ColumnName="Cancel_Id" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="Backup_sign_time" ColumnName="Backup_sign_time" />
+                <ScalarProperty Name="Fact_Cancel" ColumnName="Fact_Cancel" />
+                <ScalarProperty Name="Old_Sign_tag" ColumnName="Old_Sign_tag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_company">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_company">
+              <MappingFragment StoreEntitySet="t_account_company">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="corp_name" ColumnName="corp_name" />
+                <ScalarProperty Name="corp_quality" ColumnName="corp_quality" />
+                <ScalarProperty Name="corp_type" ColumnName="corp_type" />
+                <ScalarProperty Name="fund_c_date" ColumnName="fund_c_date" />
+                <ScalarProperty Name="linkman" ColumnName="linkman" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="charge_dept" ColumnName="charge_dept" />
+                <ScalarProperty Name="income_source" ColumnName="income_source" />
+                <ScalarProperty Name="u_proportion" ColumnName="u_proportion" />
+                <ScalarProperty Name="og_code_id" ColumnName="og_code_id" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="table_code_id" ColumnName="table_code_id" />
+                <ScalarProperty Name="fund_type" ColumnName="fund_type" />
+                <ScalarProperty Name="bank_for_unit" ColumnName="bank_for_unit" />
+                <ScalarProperty Name="bank_open_date" ColumnName="bank_open_date" />
+                <ScalarProperty Name="u_account" ColumnName="u_account" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="corp_code" ColumnName="corp_code" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="otherarea_tag" ColumnName="otherarea_tag" />
+                <ScalarProperty Name="organ_type" ColumnName="organ_type" />
+                <ScalarProperty Name="economy_type" ColumnName="economy_type" />
+                <ScalarProperty Name="industry_type" ColumnName="industry_type" />
+                <ScalarProperty Name="belong_type" ColumnName="belong_type" />
+                <ScalarProperty Name="found_date" ColumnName="found_date" />
+                <ScalarProperty Name="charge_unit_name" ColumnName="charge_unit_name" />
+                <ScalarProperty Name="post_code" ColumnName="post_code" />
+                <ScalarProperty Name="begin_render_date" ColumnName="begin_render_date" />
+                <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
+                <ScalarProperty Name="principal" ColumnName="principal" />
+                <ScalarProperty Name="principal_phone" ColumnName="principal_phone" />
+                <ScalarProperty Name="principal_mobile_phone" ColumnName="principal_mobile_phone" />
+                <ScalarProperty Name="charge_unit_principal" ColumnName="charge_unit_principal" />
+                <ScalarProperty Name="charge_unit_principal_phone" ColumnName="charge_unit_principal_phone" />
+                <ScalarProperty Name="approval_unit" ColumnName="approval_unit" />
+                <ScalarProperty Name="approval_document" ColumnName="approval_document" />
+                <ScalarProperty Name="leagal_person_name" ColumnName="leagal_person_name" />
+                <ScalarProperty Name="leagal_person_cert_type" ColumnName="leagal_person_cert_type" />
+                <ScalarProperty Name="leagal_person_cert_num" ColumnName="leagal_person_cert_num" />
+                <ScalarProperty Name="leagal_person_phone" ColumnName="leagal_person_phone" />
+                <ScalarProperty Name="leagal_person_mobile_phone" ColumnName="leagal_person_mobile_phone" />
+                <ScalarProperty Name="leagal_person_email" ColumnName="leagal_person_email" />
+                <ScalarProperty Name="id_card_num" ColumnName="id_card_num" />
+                <ScalarProperty Name="callingupbuild_no" ColumnName="callingupbuild_no" />
+                <ScalarProperty Name="is_cj" ColumnName="is_cj" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DepID" ColumnName="DepID" />
+                <ScalarProperty Name="DWXZ" ColumnName="DWXZ" />
+                <ScalarProperty Name="Old_U_BiLi" ColumnName="Old_U_BiLi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_fetch">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_fetch">
+              <MappingFragment StoreEntitySet="t_account_fetch">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="sign_item" ColumnName="sign_item" />
+                <ScalarProperty Name="sign_money" ColumnName="sign_money" />
+                <ScalarProperty Name="fact_money" ColumnName="fact_money" />
+                <ScalarProperty Name="sign_date" ColumnName="sign_date" />
+                <ScalarProperty Name="fact_date" ColumnName="fact_date" />
+                <ScalarProperty Name="accrual" ColumnName="accrual" />
+                <ScalarProperty Name="logout_tag" ColumnName="logout_tag" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="confirm_user" ColumnName="confirm_user" />
+                <ScalarProperty Name="confirm_time" ColumnName="confirm_time" />
+                <ScalarProperty Name="test_u_name" ColumnName="test_u_name" />
+                <ScalarProperty Name="test_name" ColumnName="test_name" />
+                <ScalarProperty Name="test_id_card" ColumnName="test_id_card" />
+                <ScalarProperty Name="fgb_account" ColumnName="fgb_account" />
+                <ScalarProperty Name="back_date" ColumnName="back_date" />
+                <ScalarProperty Name="tickit_remark" ColumnName="tickit_remark" />
+                <ScalarProperty Name="out_tag" ColumnName="out_tag" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="bank_card" ColumnName="bank_card" />
+                <ScalarProperty Name="bank_u_name" ColumnName="bank_u_name" />
+                <ScalarProperty Name="xml_id" ColumnName="xml_id" />
+                <ScalarProperty Name="end_month" ColumnName="end_month" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="over_area_unit_name" ColumnName="over_area_unit_name" />
+                <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="begin_fetch_month" ColumnName="begin_fetch_month" />
+                <ScalarProperty Name="end_fetch_month" ColumnName="end_fetch_month" />
+                <ScalarProperty Name="after_money" ColumnName="after_money" />
+                <ScalarProperty Name="ZhiFuMiMa" ColumnName="ZhiFuMiMa" />
+                <ScalarProperty Name="sign_opinion" ColumnName="sign_opinion" />
+                <ScalarProperty Name="deposit_id" ColumnName="deposit_id" />
+                <ScalarProperty Name="deposit_name" ColumnName="deposit_name" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="pre_account_status" ColumnName="pre_account_status" />
+                <ScalarProperty Name="K3HandBillRefPiHao" ColumnName="K3HandBillRefPiHao" />
+                <ScalarProperty Name="out_tag_accrual" ColumnName="out_tag_accrual" />
+                <ScalarProperty Name="K3HandBillRefPiHao_accrual" ColumnName="K3HandBillRefPiHao_accrual" />
+                <ScalarProperty Name="noNumberId" ColumnName="noNumberId" />
+                <ScalarProperty Name="loan_id" ColumnName="loan_id" />
+                <ScalarProperty Name="notice_id" ColumnName="notice_id" />
+                <ScalarProperty Name="notice_str" ColumnName="notice_str" />
+                <ScalarProperty Name="person_logout_first_tag" ColumnName="person_logout_first_tag" />
+                <ScalarProperty Name="open_bank" ColumnName="open_bank" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="is_AutoFetch" ColumnName="is_AutoFetch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_loan">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_loan">
+              <MappingFragment StoreEntitySet="t_account_loan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="new_id" ColumnName="new_id" />
+                <ScalarProperty Name="male_name" ColumnName="male_name" />
+                <ScalarProperty Name="male_u_id" ColumnName="male_u_id" />
+                <ScalarProperty Name="male_u_name" ColumnName="male_u_name" />
+                <ScalarProperty Name="male_id_card" ColumnName="male_id_card" />
+                <ScalarProperty Name="female_name" ColumnName="female_name" />
+                <ScalarProperty Name="female_u_id" ColumnName="female_u_id" />
+                <ScalarProperty Name="female_u_name" ColumnName="female_u_name" />
+                <ScalarProperty Name="female_id_card" ColumnName="female_id_card" />
+                <ScalarProperty Name="pledge_address" ColumnName="pledge_address" />
+                <ScalarProperty Name="loan_target" ColumnName="loan_target" />
+                <ScalarProperty Name="b_date" ColumnName="b_date" />
+                <ScalarProperty Name="e_date" ColumnName="e_date" />
+                <ScalarProperty Name="loan_money" ColumnName="loan_money" />
+                <ScalarProperty Name="loan_term" ColumnName="loan_term" />
+                <ScalarProperty Name="a_date" ColumnName="a_date" />
+                <ScalarProperty Name="sign_date" ColumnName="sign_date" />
+                <ScalarProperty Name="loan_date" ColumnName="loan_date" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="loan_tag" ColumnName="loan_tag" />
+                <ScalarProperty Name="return_tag" ColumnName="return_tag" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="pici" ColumnName="pici" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="fgb_account" ColumnName="fgb_account" />
+                <ScalarProperty Name="xml_id" ColumnName="xml_id" />
+                <ScalarProperty Name="AddLoan_Tag" ColumnName="AddLoan_Tag" />
+                <ScalarProperty Name="out_tag" ColumnName="out_tag" />
+                <ScalarProperty Name="tickit_remark" ColumnName="tickit_remark" />
+                <ScalarProperty Name="return_date" ColumnName="return_date" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="over_area_unit_name" ColumnName="over_area_unit_name" />
+                <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="cancel_date" ColumnName="cancel_date" />
+                <ScalarProperty Name="repay_type" ColumnName="repay_type" />
+                <ScalarProperty Name="monthly_rate" ColumnName="monthly_rate" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="ShouFangUnit" ColumnName="ShouFangUnit" />
+                <ScalarProperty Name="HomeAdress" ColumnName="HomeAdress" />
+                <ScalarProperty Name="HomeType" ColumnName="HomeType" />
+                <ScalarProperty Name="BuildQuality" ColumnName="BuildQuality" />
+                <ScalarProperty Name="MianJi" ColumnName="MianJi" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="ToTalCost" ColumnName="ToTalCost" />
+                <ScalarProperty Name="HandInCost" ColumnName="HandInCost" />
+                <ScalarProperty Name="HandInPercent" ColumnName="HandInPercent" />
+                <ScalarProperty Name="IsCombinateLoan" ColumnName="IsCombinateLoan" />
+                <ScalarProperty Name="BizLoanMoney" ColumnName="BizLoanMoney" />
+                <ScalarProperty Name="BizLoanTerm" ColumnName="BizLoanTerm" />
+                <ScalarProperty Name="GiveBackAccount" ColumnName="GiveBackAccount" />
+                <ScalarProperty Name="DiYaCondition" ColumnName="DiYaCondition" />
+                <ScalarProperty Name="fore_confirm_user" ColumnName="fore_confirm_user" />
+                <ScalarProperty Name="fore_confirm_time" ColumnName="fore_confirm_time" />
+                <ScalarProperty Name="final_confirm_user" ColumnName="final_confirm_user" />
+                <ScalarProperty Name="final_confirm_time" ColumnName="final_confirm_time" />
+                <ScalarProperty Name="ZhiFuMiMa" ColumnName="ZhiFuMiMa" />
+                <ScalarProperty Name="notice_id" ColumnName="notice_id" />
+                <ScalarProperty Name="K3HandBillRefPiHao" ColumnName="K3HandBillRefPiHao" />
+                <ScalarProperty Name="render_money" ColumnName="render_money" />
+                <ScalarProperty Name="noNumberID" ColumnName="noNumberID" />
+                <ScalarProperty Name="is_net_data_tag" ColumnName="is_net_data_tag" />
+                <ScalarProperty Name="net_data_input_time" ColumnName="net_data_input_time" />
+                <ScalarProperty Name="refuse_time" ColumnName="refuse_time" />
+                <ScalarProperty Name="refuse_user" ColumnName="refuse_user" />
+                <ScalarProperty Name="sign_opinion" ColumnName="sign_opinion" />
+                <ScalarProperty Name="autofetch_tag" ColumnName="autofetch_tag" />
+                <ScalarProperty Name="bank_b_date" ColumnName="bank_b_date" />
+                <ScalarProperty Name="bank_e_date" ColumnName="bank_e_date" />
+                <ScalarProperty Name="final_modify_time" ColumnName="final_modify_time" />
+                <ScalarProperty Name="final_modify_user" ColumnName="final_modify_user" />
+                <ScalarProperty Name="fore_modify_time" ColumnName="fore_modify_time" />
+                <ScalarProperty Name="fore_modify_user" ColumnName="fore_modify_user" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="BizLoanAccount" ColumnName="BizLoanAccount" />
+                <ScalarProperty Name="bank_account_id" ColumnName="bank_account_id" />
+                <ScalarProperty Name="IsAutoFetch" ColumnName="IsAutoFetch" />
+                <ScalarProperty Name="Year_Rate" ColumnName="Year_Rate" />
+                <ScalarProperty Name="Receive_Name" ColumnName="Receive_Name" />
+                <ScalarProperty Name="Receive_Account" ColumnName="Receive_Account" />
+                <ScalarProperty Name="Rate_Flow" ColumnName="Rate_Flow" />
+                <ScalarProperty Name="NSign_tag" ColumnName="NSign_tag" />
+                <ScalarProperty Name="R_D" ColumnName="R_D" />
+                <ScalarProperty Name="R_U" ColumnName="R_U" />
+                <ScalarProperty Name="HouseNum" ColumnName="HouseNum" />
+                <ScalarProperty Name="RECBank" ColumnName="RECBank" />
+                <ScalarProperty Name="ESTVakye" ColumnName="ESTVakye" />
+                <ScalarProperty Name="GBAName" ColumnName="GBAName" />
+                <ScalarProperty Name="notice_str" ColumnName="notice_str" />
+                <ScalarProperty Name="IsBankInput" ColumnName="IsBankInput" />
+                <ScalarProperty Name="BackToBank" ColumnName="BackToBank" />
+                <ScalarProperty Name="BankInputer" ColumnName="BankInputer" />
+                <ScalarProperty Name="BankInputTime" ColumnName="BankInputTime" />
+                <ScalarProperty Name="SF_Phone" ColumnName="SF_Phone" />
+                <ScalarProperty Name="ZJJG" ColumnName="ZJJG" />
+                <ScalarProperty Name="ZJ_Phone" ColumnName="ZJ_Phone" />
+                <ScalarProperty Name="JBR_Phone" ColumnName="JBR_Phone" />
+                <ScalarProperty Name="LH_Date" ColumnName="LH_Date" />
+                <ScalarProperty Name="LH_H" ColumnName="LH_H" />
+                <ScalarProperty Name="LH_Remark" ColumnName="LH_Remark" />
+                <ScalarProperty Name="LH_HTDate" ColumnName="LH_HTDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_lock_and_unlock">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_lock_and_unlock">
+              <MappingFragment StoreEntitySet="t_account_lock_and_unlock">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="c_date" ColumnName="c_date" />
+                <ScalarProperty Name="fact_date" ColumnName="fact_date" />
+                <ScalarProperty Name="end_month" ColumnName="end_month" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="test_u_name" ColumnName="test_u_name" />
+                <ScalarProperty Name="test_name" ColumnName="test_name" />
+                <ScalarProperty Name="test_id_card" ColumnName="test_id_card" />
+                <ScalarProperty Name="sign_money" ColumnName="sign_money" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="bank_card" ColumnName="bank_card" />
+                <ScalarProperty Name="xml_id" ColumnName="xml_id" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="over_area_unit_name" ColumnName="over_area_unit_name" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="after_money" ColumnName="after_money" />
+                <ScalarProperty Name="ZhiFuMiMa" ColumnName="ZhiFuMiMa" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="noNumberId" ColumnName="noNumberId" />
+                <ScalarProperty Name="unit_lock_finally_tag" ColumnName="unit_lock_finally_tag" />
+                <ScalarProperty Name="pre_account_status" ColumnName="pre_account_status" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="IsRenderAdjust" ColumnName="IsRenderAdjust" />
+                <ScalarProperty Name="s_id" ColumnName="s_id" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_patch">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_patch">
+              <MappingFragment StoreEntitySet="t_account_patch">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fgb_account" ColumnName="fgb_account" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="bank_card" ColumnName="bank_card" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="id_card" ColumnName="id_card" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="repair_money" ColumnName="repair_money" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="begin_date" ColumnName="begin_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="xml_id" ColumnName="xml_id" />
+                <ScalarProperty Name="out_tag" ColumnName="out_tag" />
+                <ScalarProperty Name="tickit_remark" ColumnName="tickit_remark" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="over_area_unit_name" ColumnName="over_area_unit_name" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="after_money" ColumnName="after_money" />
+                <ScalarProperty Name="sign_date" ColumnName="sign_date" />
+                <ScalarProperty Name="u_bili" ColumnName="u_bili" />
+                <ScalarProperty Name="i_bili" ColumnName="i_bili" />
+                <ScalarProperty Name="is_margin_patch_tag" ColumnName="is_margin_patch_tag" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="salary_amount" ColumnName="salary_amount" />
+                <ScalarProperty Name="noNumberID" ColumnName="noNumberID" />
+                <ScalarProperty Name="u_repair_money" ColumnName="u_repair_money" />
+                <ScalarProperty Name="i_repair_money" ColumnName="i_repair_money" />
+                <ScalarProperty Name="K3HandBillRefPiHao" ColumnName="K3HandBillRefPiHao" />
+                <ScalarProperty Name="transfer_in_tag" ColumnName="transfer_in_tag" />
+                <ScalarProperty Name="is_ration_patch_tag" ColumnName="is_ration_patch_tag" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="delete_time" ColumnName="delete_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account_transfer">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_account_transfer">
+              <MappingFragment StoreEntitySet="t_account_transfer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="out_unit_id" ColumnName="out_unit_id" />
+                <ScalarProperty Name="in_unit_id" ColumnName="in_unit_id" />
+                <ScalarProperty Name="out_bank" ColumnName="out_bank" />
+                <ScalarProperty Name="in_bank" ColumnName="in_bank" />
+                <ScalarProperty Name="out_account" ColumnName="out_account" />
+                <ScalarProperty Name="in_account" ColumnName="in_account" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="c_date" ColumnName="c_date" />
+                <ScalarProperty Name="fact_date" ColumnName="fact_date" />
+                <ScalarProperty Name="fact_money" ColumnName="fact_money" />
+                <ScalarProperty Name="accrual" ColumnName="accrual" />
+                <ScalarProperty Name="end_month" ColumnName="end_month" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="test_out_u_name" ColumnName="test_out_u_name" />
+                <ScalarProperty Name="test_name" ColumnName="test_name" />
+                <ScalarProperty Name="test_in_u_name" ColumnName="test_in_u_name" />
+                <ScalarProperty Name="test_id_card" ColumnName="test_id_card" />
+                <ScalarProperty Name="sign_money" ColumnName="sign_money" />
+                <ScalarProperty Name="sign_confirm" ColumnName="sign_confirm" />
+                <ScalarProperty Name="fgb_account" ColumnName="fgb_account" />
+                <ScalarProperty Name="back_date" ColumnName="back_date" />
+                <ScalarProperty Name="tickit_remark" ColumnName="tickit_remark" />
+                <ScalarProperty Name="out_tag" ColumnName="out_tag" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="out_tag_out" ColumnName="out_tag_out" />
+                <ScalarProperty Name="xml_in_id" ColumnName="xml_in_id" />
+                <ScalarProperty Name="xml_out_id" ColumnName="xml_out_id" />
+                <ScalarProperty Name="To_Forign_Tag" ColumnName="To_Forign_Tag" />
+                <ScalarProperty Name="out_fact_date" ColumnName="out_fact_date" />
+                <ScalarProperty Name="in_fact_date" ColumnName="in_fact_date" />
+                <ScalarProperty Name="to_area" ColumnName="to_area" />
+                <ScalarProperty Name="out_area_tag" ColumnName="out_area_tag" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="over_area_unit_name" ColumnName="over_area_unit_name" />
+                <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="after_money" ColumnName="after_money" />
+                <ScalarProperty Name="ZhiFuMiMa" ColumnName="ZhiFuMiMa" />
+                <ScalarProperty Name="in_unit_name" ColumnName="in_unit_name" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="pre_account_status" ColumnName="pre_account_status" />
+                <ScalarProperty Name="in_after_money" ColumnName="in_after_money" />
+                <ScalarProperty Name="K3HandBillRefPiHao" ColumnName="K3HandBillRefPiHao" />
+                <ScalarProperty Name="K3HandBillRefPiHao_out" ColumnName="K3HandBillRefPiHao_out" />
+                <ScalarProperty Name="out_tag_accrual" ColumnName="out_tag_accrual" />
+                <ScalarProperty Name="K3HandBillRefPiHao_accrual" ColumnName="K3HandBillRefPiHao_accrual" />
+                <ScalarProperty Name="out_noNumberId" ColumnName="out_noNumberId" />
+                <ScalarProperty Name="in_noNumberId" ColumnName="in_noNumberId" />
+                <ScalarProperty Name="notice_id" ColumnName="notice_id" />
+                <ScalarProperty Name="notice_str" ColumnName="notice_str" />
+                <ScalarProperty Name="is_combine_tag" ColumnName="is_combine_tag" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="is_BankChange_tag" ColumnName="is_BankChange_tag" />
+                <ScalarProperty Name="in_unit_account" ColumnName="in_unit_account" />
+                <ScalarProperty Name="combine_id" ColumnName="combine_id" />
+                <ScalarProperty Name="sub_tag" ColumnName="sub_tag" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="InACName" ColumnName="InACName" />
+                <ScalarProperty Name="InACAccount" ColumnName="InACAccount" />
+                <ScalarProperty Name="delete_time" ColumnName="delete_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_salary_info">
+            <EntityTypeMapping TypeName="JMGJJFactModel.t_salary_info">
+              <MappingFragment StoreEntitySet="t_salary_info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="id_card" ColumnName="id_card" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="work_date" ColumnName="work_date" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="bili" ColumnName="bili" />
+                <ScalarProperty Name="render_money" ColumnName="render_money" />
+                <ScalarProperty Name="adjust_date" ColumnName="adjust_date" />
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="import_tag" ColumnName="import_tag" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="import_user" ColumnName="import_user" />
+                <ScalarProperty Name="import_time" ColumnName="import_time" />
+                <ScalarProperty Name="excel_row" ColumnName="excel_row" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="over_area_unit_name" ColumnName="over_area_unit_name" />
+                <ScalarProperty Name="u_bili" ColumnName="u_bili" />
+                <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+                <ScalarProperty Name="i_bili" ColumnName="i_bili" />
+                <ScalarProperty Name="is_ration_adjust_tag" ColumnName="is_ration_adjust_tag" />
+                <ScalarProperty Name="pre_salary" ColumnName="pre_salary" />
+                <ScalarProperty Name="pre_render_money" ColumnName="pre_render_money" />
+                <ScalarProperty Name="pre_u_bili" ColumnName="pre_u_bili" />
+                <ScalarProperty Name="pre_i_bili" ColumnName="pre_i_bili" />
+                <ScalarProperty Name="pre_u_money" ColumnName="pre_u_money" />
+                <ScalarProperty Name="pre_i_money" ColumnName="pre_i_money" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="is_TransferAdjust_tag" ColumnName="is_TransferAdjust_tag" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

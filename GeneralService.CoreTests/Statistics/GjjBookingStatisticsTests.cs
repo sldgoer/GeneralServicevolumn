@@ -15,11 +15,14 @@ namespace GeneralService.Core.Statistics.Tests
         public void BookingPlatFormVolumnStatisticsTest()
         {
             GjjBookingStatistics gbs = new GjjBookingStatistics();
+            
             DateTime dtBegin = Convert.ToDateTime("2017-7-1");
-            DateTime dtEnd = Convert.ToDateTime("2017-7-31");
+            DateTime dtEnd = Convert.ToDateTime("2017-7-31").AddDays(1);
 
-            Console.Write(gbs.BookingPlatFormVolumnStatistics(dtBegin,dtEnd));
-            Assert.Fail();
+            Console.Write(gbs.BookingPlatFormVolumnStatistics(dtBegin, dtEnd));
+            Console.Write(gbs.BookingCompleteVolumnStatistics(dtBegin,dtEnd));
+            
+            //Assert.Fail();
         }
     }
 }

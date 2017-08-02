@@ -18,7 +18,7 @@ namespace GeneralService.Core.Statistics.Models
         public GjjBookingEntities()
             : base("name=GjjBookingEntities")
         {
-            System.Console.WriteLine(Database.Connection.ConnectionString);
+            //System.Console.WriteLine(Database.Connection.ConnectionString);
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
