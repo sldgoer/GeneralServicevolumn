@@ -4,14 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="55f263918d754c848498fbf76f4686f3" Name="Diagram1">
+      <Diagram DiagramId="2931a769072d45e6b87db29db87535c3" Name="Diagram1">
         <EntityTypeShape EntityType="JmgjjPreliminaryModel.A030PreUnit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A033PreFetch" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A034preAccount" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A035preLockAndUnLock" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A036preBuJiao" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A037preJctz" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A038TranIn" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A030UnitBase" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A032accountBind" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A033PreFetch" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A034preAccount" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A034preAccount_1" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A035preLock_1" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A035preLockAndUnLock" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A035preUnLock_1" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A036preBuJiao" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A036preBujiao_1" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A037preJctz" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A037preJctz_1" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A038TranIn" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A038TranIn_1" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A040LoanFileInfo" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A040LoanFileInfo_1" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A050Sms" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.t_account" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A002" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A004" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A006" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A009" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.A022" Width="1.5" PointX="16.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.MSreplication_subscriptions" Width="1.5" PointX="8.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JmgjjPreliminaryModel.MSsnapshotdeliveryprogress" Width="1.5" PointX="10.75" PointY="16.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -5,6 +5,113 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="JmgjjPreliminaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.A002”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="A002">
+          <Key>
+            <PropertyRef Name="depcode" />
+            <PropertyRef Name="isinuse" />
+          </Key>
+          <Property Name="depcode" Type="int" Nullable="false" />
+          <Property Name="depname" Type="nvarchar" MaxLength="30" />
+          <Property Name="depin" Type="nvarchar" MaxLength="20" />
+          <Property Name="deptype" Type="nvarchar" MaxLength="20" />
+          <Property Name="leader" Type="nvarchar" MaxLength="50" />
+          <Property Name="viceleader" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="isinuse" Type="bit" Nullable="false" />
+          <Property Name="des" Type="nvarchar" MaxLength="200" />
+          <Property Name="OnEditor" Type="nvarchar" MaxLength="10" />
+          <Property Name="OnDate" Type="datetime" />
+          <Property Name="Editor" Type="nvarchar" MaxLength="10" />
+          <Property Name="EditTime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="50" />
+          <Property Name="audittime" Type="smalldatetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.A004”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="A004">
+          <Key>
+            <PropertyRef Name="csid" />
+            <PropertyRef Name="cssort" />
+            <PropertyRef Name="csvalue" />
+          </Key>
+          <Property Name="csid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cssort" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="csvalue" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="csname" Type="nvarchar" MaxLength="50" />
+          <Property Name="paramvalue" Type="nvarchar" MaxLength="50" />
+          <Property Name="des" Type="nvarchar" MaxLength="50" />
+          <Property Name="isinuse" Type="bit" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="oneditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="depcode" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.A006”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="A006">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="partid" />
+            <PropertyRef Name="menuid" />
+            <PropertyRef Name="qx" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="partid" Type="int" Nullable="false" />
+          <Property Name="menuid" Type="int" Nullable="false" />
+          <Property Name="qx" Type="int" Nullable="false" />
+          <Property Name="PanelBTOrder" Type="int" />
+          <Property Name="IsBTInPanel" Type="bit" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.A009”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="A009">
+          <Key>
+            <PropertyRef Name="menumxid" />
+            <PropertyRef Name="menuid" />
+            <PropertyRef Name="submenuid" />
+          </Key>
+          <Property Name="menumxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menuid" Type="int" Nullable="false" />
+          <Property Name="submenuid" Type="int" Nullable="false" />
+          <Property Name="submenuorder" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.A022”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="A022">
+          <Key>
+            <PropertyRef Name="NeedCodeObjectName" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="NeedCodeFieldName" />
+            <PropertyRef Name="CodeOrderType" />
+            <PropertyRef Name="isdel" />
+          </Key>
+          <Property Name="NeedCodeObjectName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NeedCodeFieldName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="prefix" Type="nvarchar" MaxLength="50" />
+          <Property Name="datefix" Type="nvarchar" MaxLength="50" />
+          <Property Name="postfix" Type="nvarchar" MaxLength="50" />
+          <Property Name="outareafix" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeOrderType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="filtercondition" Type="nvarchar" MaxLength="50" />
+          <Property Name="isinuse" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="des" Type="nvarchar" MaxLength="50" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="A030PreUnit">
           <Key>
             <PropertyRef Name="puid" />
@@ -18,6 +125,87 @@
           <Property Name="agentName" Type="nvarchar" MaxLength="50" />
           <Property Name="agentTel" Type="nvarchar" MaxLength="50" />
           <Property Name="isSync" Type="bit" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="200" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A030UnitBase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="u_account" Type="nvarchar" MaxLength="20" />
+          <Property Name="u_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="u_quality" Type="nvarchar" MaxLength="50" />
+          <Property Name="u_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
+          <Property Name="officephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="officeaddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="e_mail" Type="nvarchar" MaxLength="20" />
+          <Property Name="website" Type="nvarchar" MaxLength="50" />
+          <Property Name="og_code_id" Type="nvarchar" MaxLength="20" />
+          <Property Name="number_id" Type="nvarchar" MaxLength="20" />
+          <Property Name="fund_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="bank_for_unit" Type="nvarchar" MaxLength="20" />
+          <Property Name="bank_open_date" Type="datetime" />
+          <Property Name="area_code" Type="nvarchar" MaxLength="20" />
+          <Property Name="bank_card" Type="nvarchar" MaxLength="20" />
+          <Property Name="economy_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="belong_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="charge_unit_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="principal" Type="nvarchar" MaxLength="20" />
+          <Property Name="principal_phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="principal_id_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="principal_id_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="principal_mobile_phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="charge_unit_principal" Type="nvarchar" MaxLength="20" />
+          <Property Name="charge_unit_principal_phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="approval_unit" Type="nvarchar" MaxLength="20" />
+          <Property Name="approval_document" Type="nvarchar" MaxLength="20" />
+          <Property Name="leagal_person_name" Type="nvarchar" MaxLength="20" />
+          <Property Name="leagal_person_cert_type" Type="nvarchar" MaxLength="20" />
+          <Property Name="leagal_person_cert_num" Type="nvarchar" MaxLength="20" />
+          <Property Name="leagal_person_phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="leagal_person_mobile_phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="leagal_person_email" Type="nvarchar" MaxLength="20" />
+          <Property Name="u_bili" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="jiaocun_create_date" Type="datetime" />
+          <Property Name="jiaocun_begin_date" Type="datetime" />
+          <Property Name="liushuihao" Type="nvarchar" MaxLength="50" />
+          <Property Name="SendCount" Type="int" />
+          <Property Name="renderNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CheckDate" Type="datetime" />
+          <Property Name="finishdate" Type="datetime" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="200" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" Nullable="false" />
+          <Property Name="print_tag" Type="int" />
+          <Property Name="isPrint" Type="bit" />
+        </EntityType>
+        <EntityType Name="A032accountBind">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="areaCode" Type="int" />
+          <Property Name="aId" Type="int" Nullable="false" />
+          <Property Name="uId" Type="int" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstBindTime" Type="datetime" />
+          <Property Name="firstBingType" Type="nvarchar" MaxLength="50" />
+          <Property Name="passWord" Type="nvarchar" MaxLength="50" />
+          <Property Name="tel" Type="nvarchar" MaxLength="11" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
           <Property Name="ondate" Type="datetime" />
           <Property Name="editor" Type="nvarchar" MaxLength="20" />
           <Property Name="des" Type="nvarchar" MaxLength="200" />
@@ -73,6 +261,42 @@
           <Property Name="isdel" Type="bit" />
           <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="A034preAccount_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="workDate" Type="datetime" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="float" />
+          <Property Name="iBili" Type="float" />
+          <Property Name="uMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A035preLock_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="lockDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="totalMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
         <EntityType Name="A035preLockAndUnLock">
           <Key>
             <PropertyRef Name="responsNum" />
@@ -92,6 +316,27 @@
           <Property Name="edittime" Type="datetime" />
           <Property Name="auditor" Type="nvarchar" MaxLength="20" />
           <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A035preUnLock_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="unlockDate" Type="datetime" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="float" />
+          <Property Name="iBili" Type="float" />
+          <Property Name="uMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
           <Property Name="isdel" Type="bit" />
           <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
@@ -116,6 +361,29 @@
           <Property Name="isdel" Type="bit" />
           <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="A036preBujiao_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="beginDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="endDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="float" />
+          <Property Name="iBili" Type="float" />
+          <Property Name="uMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="patchMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="patchType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
         <EntityType Name="A037preJctz">
           <Key>
             <PropertyRef Name="responsNum" />
@@ -134,6 +402,27 @@
           <Property Name="edittime" Type="datetime" />
           <Property Name="auditor" Type="nvarchar" MaxLength="20" />
           <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A037preJctz_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="jctzDate" Type="datetime" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="float" />
+          <Property Name="iBili" Type="float" />
+          <Property Name="uMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
           <Property Name="isdel" Type="bit" />
           <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
@@ -158,14 +447,307 @@
           <Property Name="isdel" Type="bit" />
           <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="A038TranIn_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="responsNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="account" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="inDate" Type="datetime" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="float" />
+          <Property Name="iBili" Type="float" />
+          <Property Name="uMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="isdel" Type="bit" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A040LoanFileInfo">
+          <Key>
+            <PropertyRef Name="queryId" />
+          </Key>
+          <Property Name="queryId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="depCode" Type="int" />
+          <Property Name="bankId" Type="int" />
+          <Property Name="bankName" Type="nvarchar" MaxLength="50" />
+          <Property Name="loanName" Type="nvarchar" MaxLength="50" />
+          <Property Name="loanIdcard" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="500" />
+          <Property Name="currentStep" Type="int" Nullable="false" />
+          <Property Name="remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="loanTel" Type="nvarchar" MaxLength="13" />
+          <Property Name="bankTel" Type="nvarchar" MaxLength="13" />
+          <Property Name="LandTel" Type="nvarchar" MaxLength="13" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="20" />
+          <Property Name="des" Type="nvarchar" MaxLength="200" />
+          <Property Name="edittime" Type="datetime" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="20" />
+          <Property Name="audittime" Type="datetime" />
+          <Property Name="isdel" Type="bit" Nullable="false" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A040LoanFileInfo_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="queryId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="step" Type="int" Nullable="false" />
+          <Property Name="jjDate" Type="datetime" Nullable="false" />
+          <Property Name="rejectDes" Type="nvarchar" MaxLength="200" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="editor" Type="nvarchar" MaxLength="50" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A050Sms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="smsId" Type="bigint" Nullable="false" />
+          <Property Name="telNo" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="sendContent" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="smsState" Type="int" />
+          <Property Name="smsDesc" Type="nvarchar" MaxLength="50" />
+          <Property Name="rptTime" Type="datetime" />
+          <Property Name="ondate" Type="datetime" />
+          <Property Name="tsp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.MSreplication_subscriptions”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="MSreplication_subscriptions">
+          <Key>
+            <PropertyRef Name="publisher" />
+            <PropertyRef Name="independent_agent" />
+            <PropertyRef Name="subscription_type" />
+            <PropertyRef Name="time" />
+            <PropertyRef Name="transaction_timestamp" />
+            <PropertyRef Name="update_mode" />
+            <PropertyRef Name="immediate_sync" />
+          </Key>
+          <Property Name="publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="publisher_db" Type="nvarchar" MaxLength="128" />
+          <Property Name="publication" Type="nvarchar" MaxLength="128" />
+          <Property Name="independent_agent" Type="bit" Nullable="false" />
+          <Property Name="subscription_type" Type="int" Nullable="false" />
+          <Property Name="distribution_agent" Type="nvarchar" MaxLength="128" />
+          <Property Name="time" Type="smalldatetime" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="255" />
+          <Property Name="transaction_timestamp" Type="varbinary" MaxLength="16" Nullable="false" />
+          <Property Name="update_mode" Type="tinyint" Nullable="false" />
+          <Property Name="agent_id" Type="binary" MaxLength="16" />
+          <Property Name="subscription_guid" Type="binary" MaxLength="16" />
+          <Property Name="subid" Type="binary" MaxLength="16" />
+          <Property Name="immediate_sync" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JmgjjPreliminary.dbo.MSsnapshotdeliveryprogress”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="MSsnapshotdeliveryprogress">
+          <Key>
+            <PropertyRef Name="session_token" />
+            <PropertyRef Name="progress_token_hash" />
+            <PropertyRef Name="progress_token" />
+          </Key>
+          <Property Name="session_token" Type="nvarchar" MaxLength="260" Nullable="false" />
+          <Property Name="progress_token_hash" Type="int" Nullable="false" />
+          <Property Name="progress_token" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="progress_timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="t_account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="u_id" Type="int" Nullable="false" />
+          <Property Name="Id_Card" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="255" />
+          <Property Name="workdate" Type="datetime" />
+          <Property Name="c_date" Type="datetime" />
+          <Property Name="Bank" Type="int" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="u_money" Type="money" />
+          <Property Name="i_money" Type="money" />
+          <Property Name="Money" Type="money" />
+          <Property Name="accrual" Type="money" />
+          <Property Name="Status" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="8000" />
+          <Property Name="sign_tag" Type="int" Nullable="false" />
+          <Property Name="input_user" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="input_time" Type="datetime" Nullable="false" />
+          <Property Name="sign_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_time" Type="datetime" />
+          <Property Name="number_id" Type="varchar" MaxLength="255" />
+          <Property Name="u_name" Type="varchar" MaxLength="255" />
+          <Property Name="money_backup" Type="money" />
+          <Property Name="fgb_account" Type="varchar" MaxLength="255" />
+          <Property Name="u_account" Type="varchar" MaxLength="255" />
+          <Property Name="tel" Type="varchar" MaxLength="255" />
+          <Property Name="mobile" Type="varchar" MaxLength="255" />
+          <Property Name="bank_card" Type="varchar" MaxLength="255" />
+          <Property Name="Render_Money" Type="money" />
+          <Property Name="bank_u_name" Type="varchar" MaxLength="255" />
+          <Property Name="end_date" Type="datetime" />
+          <Property Name="xml_id" Type="int" />
+          <Property Name="fact_date" Type="datetime" />
+          <Property Name="bili" Type="float" />
+          <Property Name="over_area_tag" Type="bit" />
+          <Property Name="area_code" Type="int" />
+          <Property Name="corp_type" Type="varchar" MaxLength="20" />
+          <Property Name="corp_code" Type="varchar" MaxLength="255" />
+          <Property Name="u_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="varchar" MaxLength="255" />
+          <Property Name="i_bili" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="account_backup" Type="varchar" MaxLength="255" />
+          <Property Name="noNumberId" Type="int" />
+          <Property Name="is_loan_otherarea_tag" Type="bit" />
+          <Property Name="render_city" Type="varchar" MaxLength="255" />
+          <Property Name="openMoney" Type="money" />
+          <Property Name="is_id_card" Type="bit" />
+          <Property Name="modify_time" Type="datetime" />
+          <Property Name="modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="sign_modify_time" Type="datetime" />
+          <Property Name="sign_modify_user" Type="varchar" MaxLength="255" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="NewBalance" Type="money" />
+          <Property Name="GLMen" Type="varchar" MaxLength="100" />
+          <Property Name="18BitIdCard" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityContainer Name="JmgjjPreliminaryModelStoreContainer">
           <EntitySet Name="A030PreUnit" EntityType="Self.A030PreUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A030UnitBase" EntityType="Self.A030UnitBase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A032accountBind" EntityType="Self.A032accountBind" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="A033PreFetch" EntityType="Self.A033PreFetch" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="A034preAccount" EntityType="Self.A034preAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A034preAccount_1" EntityType="Self.A034preAccount_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A035preLock_1" EntityType="Self.A035preLock_1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="A035preLockAndUnLock" EntityType="Self.A035preLockAndUnLock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A035preUnLock_1" EntityType="Self.A035preUnLock_1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="A036preBuJiao" EntityType="Self.A036preBuJiao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A036preBujiao_1" EntityType="Self.A036preBujiao_1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="A037preJctz" EntityType="Self.A037preJctz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A037preJctz_1" EntityType="Self.A037preJctz_1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="A038TranIn" EntityType="Self.A038TranIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A038TranIn_1" EntityType="Self.A038TranIn_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A040LoanFileInfo" EntityType="Self.A040LoanFileInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A040LoanFileInfo_1" EntityType="Self.A040LoanFileInfo_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A050Sms" EntityType="Self.A050Sms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_account" EntityType="Self.t_account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A002" EntityType="Self.A002" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [A002].[depcode] AS [depcode], 
+    [A002].[depname] AS [depname], 
+    [A002].[depin] AS [depin], 
+    [A002].[deptype] AS [deptype], 
+    [A002].[leader] AS [leader], 
+    [A002].[viceleader] AS [viceleader], 
+    [A002].[Tel] AS [Tel], 
+    [A002].[isinuse] AS [isinuse], 
+    [A002].[des] AS [des], 
+    [A002].[OnEditor] AS [OnEditor], 
+    [A002].[OnDate] AS [OnDate], 
+    [A002].[Editor] AS [Editor], 
+    [A002].[EditTime] AS [EditTime], 
+    [A002].[auditor] AS [auditor], 
+    [A002].[audittime] AS [audittime], 
+    [A002].[isdel] AS [isdel], 
+    [A002].[tsp] AS [tsp]
+    FROM [dbo].[A002] AS [A002]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="A004" EntityType="Self.A004" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [A004].[csid] AS [csid], 
+    [A004].[cssort] AS [cssort], 
+    [A004].[csvalue] AS [csvalue], 
+    [A004].[csname] AS [csname], 
+    [A004].[paramvalue] AS [paramvalue], 
+    [A004].[des] AS [des], 
+    [A004].[isinuse] AS [isinuse], 
+    [A004].[ondate] AS [ondate], 
+    [A004].[editor] AS [editor], 
+    [A004].[edittime] AS [edittime], 
+    [A004].[auditor] AS [auditor], 
+    [A004].[audittime] AS [audittime], 
+    [A004].[oneditor] AS [oneditor], 
+    [A004].[isdel] AS [isdel], 
+    [A004].[depcode] AS [depcode]
+    FROM [dbo].[A004] AS [A004]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="A006" EntityType="Self.A006" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [A006].[id] AS [id], 
+    [A006].[partid] AS [partid], 
+    [A006].[menuid] AS [menuid], 
+    [A006].[qx] AS [qx], 
+    [A006].[PanelBTOrder] AS [PanelBTOrder], 
+    [A006].[IsBTInPanel] AS [IsBTInPanel]
+    FROM [dbo].[A006] AS [A006]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="A009" EntityType="Self.A009" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [A009].[menumxid] AS [menumxid], 
+    [A009].[menuid] AS [menuid], 
+    [A009].[submenuid] AS [submenuid], 
+    [A009].[submenuorder] AS [submenuorder]
+    FROM [dbo].[A009] AS [A009]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="A022" EntityType="Self.A022" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [A022].[NeedCodeObjectName] AS [NeedCodeObjectName], 
+    [A022].[TableName] AS [TableName], 
+    [A022].[NeedCodeFieldName] AS [NeedCodeFieldName], 
+    [A022].[prefix] AS [prefix], 
+    [A022].[datefix] AS [datefix], 
+    [A022].[postfix] AS [postfix], 
+    [A022].[outareafix] AS [outareafix], 
+    [A022].[CodeOrderType] AS [CodeOrderType], 
+    [A022].[filtercondition] AS [filtercondition], 
+    [A022].[isinuse] AS [isinuse], 
+    [A022].[tsp] AS [tsp], 
+    [A022].[des] AS [des], 
+    [A022].[ondate] AS [ondate], 
+    [A022].[editor] AS [editor], 
+    [A022].[edittime] AS [edittime], 
+    [A022].[auditor] AS [auditor], 
+    [A022].[audittime] AS [audittime], 
+    [A022].[isdel] AS [isdel]
+    FROM [dbo].[A022] AS [A022]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MSreplication_subscriptions" EntityType="Self.MSreplication_subscriptions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MSreplication_subscriptions].[publisher] AS [publisher], 
+    [MSreplication_subscriptions].[publisher_db] AS [publisher_db], 
+    [MSreplication_subscriptions].[publication] AS [publication], 
+    [MSreplication_subscriptions].[independent_agent] AS [independent_agent], 
+    [MSreplication_subscriptions].[subscription_type] AS [subscription_type], 
+    [MSreplication_subscriptions].[distribution_agent] AS [distribution_agent], 
+    [MSreplication_subscriptions].[time] AS [time], 
+    [MSreplication_subscriptions].[description] AS [description], 
+    [MSreplication_subscriptions].[transaction_timestamp] AS [transaction_timestamp], 
+    [MSreplication_subscriptions].[update_mode] AS [update_mode], 
+    [MSreplication_subscriptions].[agent_id] AS [agent_id], 
+    [MSreplication_subscriptions].[subscription_guid] AS [subscription_guid], 
+    [MSreplication_subscriptions].[subid] AS [subid], 
+    [MSreplication_subscriptions].[immediate_sync] AS [immediate_sync]
+    FROM [dbo].[MSreplication_subscriptions] AS [MSreplication_subscriptions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MSsnapshotdeliveryprogress" EntityType="Self.MSsnapshotdeliveryprogress" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MSsnapshotdeliveryprogress].[session_token] AS [session_token], 
+    [MSsnapshotdeliveryprogress].[progress_token_hash] AS [progress_token_hash], 
+    [MSsnapshotdeliveryprogress].[progress_token] AS [progress_token], 
+    [MSsnapshotdeliveryprogress].[progress_timestamp] AS [progress_timestamp]
+    FROM [dbo].[MSsnapshotdeliveryprogress] AS [MSsnapshotdeliveryprogress]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -185,6 +767,87 @@
           <Property Name="agentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="agentTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="isSync" Type="Boolean" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A030UnitBase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="u_account" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="u_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="u_quality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="u_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="officephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="officeaddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="e_mail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="og_code_id" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="number_id" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fund_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bank_for_unit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bank_open_date" Type="DateTime" Precision="3" />
+          <Property Name="area_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="bank_card" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="economy_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="belong_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="charge_unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="principal" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="principal_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="principal_mobile_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="charge_unit_principal" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="charge_unit_principal_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="approval_unit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="approval_document" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leagal_person_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leagal_person_cert_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leagal_person_cert_num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leagal_person_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leagal_person_mobile_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leagal_person_email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="u_bili" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="jiaocun_create_date" Type="DateTime" Precision="3" />
+          <Property Name="jiaocun_begin_date" Type="DateTime" Precision="3" />
+          <Property Name="liushuihao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SendCount" Type="Int32" />
+          <Property Name="renderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CheckDate" Type="DateTime" Precision="3" />
+          <Property Name="finishdate" Type="DateTime" Precision="3" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" Nullable="false" />
+          <Property Name="print_tag" Type="Int32" />
+          <Property Name="isPrint" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="A032accountBind">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="areaCode" Type="Int32" />
+          <Property Name="aId" Type="Int32" Nullable="false" />
+          <Property Name="uId" Type="Int32" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="firstBindTime" Type="DateTime" Precision="3" />
+          <Property Name="firstBingType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="ondate" Type="DateTime" Precision="3" />
           <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -240,6 +903,42 @@
           <Property Name="isdel" Type="Boolean" />
           <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="A034preAccount_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="workDate" Type="DateTime" Precision="3" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="Double" />
+          <Property Name="iBili" Type="Double" />
+          <Property Name="uMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A035preLock_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lockDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="totalMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
         <EntityType Name="A035preLockAndUnLock">
           <Key>
             <PropertyRef Name="responsNum" />
@@ -259,6 +958,27 @@
           <Property Name="edittime" Type="DateTime" Precision="3" />
           <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A035preUnLock_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="unlockDate" Type="DateTime" Precision="3" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="Double" />
+          <Property Name="iBili" Type="Double" />
+          <Property Name="uMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="isdel" Type="Boolean" />
           <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
@@ -283,6 +1003,29 @@
           <Property Name="isdel" Type="Boolean" />
           <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="A036preBujiao_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="beginDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="endDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="Double" />
+          <Property Name="iBili" Type="Double" />
+          <Property Name="uMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="patchMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="patchType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
         <EntityType Name="A037preJctz">
           <Key>
             <PropertyRef Name="responsNum" />
@@ -301,6 +1044,27 @@
           <Property Name="edittime" Type="DateTime" Precision="3" />
           <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A037preJctz_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jctzDate" Type="DateTime" Precision="3" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="Double" />
+          <Property Name="iBili" Type="Double" />
+          <Property Name="uMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="isdel" Type="Boolean" />
           <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
@@ -325,14 +1089,301 @@
           <Property Name="isdel" Type="Boolean" />
           <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="A038TranIn_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="responsNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inDate" Type="DateTime" Precision="3" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="uBili" Type="Double" />
+          <Property Name="iBili" Type="Double" />
+          <Property Name="uMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="iMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A040LoanFileInfo">
+          <Key>
+            <PropertyRef Name="queryId" />
+          </Key>
+          <Property Name="queryId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="depCode" Type="Int32" />
+          <Property Name="bankId" Type="Int32" />
+          <Property Name="bankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="loanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="loanIdcard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="currentStep" Type="Int32" Nullable="false" />
+          <Property Name="remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="loanTel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="bankTel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="LandTel" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" Nullable="false" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A040LoanFileInfo_1">
+          <Key>
+            <PropertyRef Name="mxid" />
+          </Key>
+          <Property Name="mxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="queryId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="step" Type="Int32" Nullable="false" />
+          <Property Name="jjDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="rejectDes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A050Sms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="smsId" Type="Int64" Nullable="false" />
+          <Property Name="telNo" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sendContent" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="smsState" Type="Int32" />
+          <Property Name="smsDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rptTime" Type="DateTime" Precision="3" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="t_account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="u_id" Type="Int32" Nullable="false" />
+          <Property Name="Id_Card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="workdate" Type="DateTime" Precision="3" />
+          <Property Name="c_date" Type="DateTime" Precision="3" />
+          <Property Name="Bank" Type="Int32" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="u_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="i_money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="accrual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="remark" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="sign_tag" Type="Int32" Nullable="false" />
+          <Property Name="input_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="input_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sign_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_time" Type="DateTime" Precision="3" />
+          <Property Name="number_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="money_backup" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fgb_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bank_card" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Render_Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="bank_u_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="end_date" Type="DateTime" Precision="3" />
+          <Property Name="xml_id" Type="Int32" />
+          <Property Name="fact_date" Type="DateTime" Precision="3" />
+          <Property Name="bili" Type="Double" />
+          <Property Name="over_area_tag" Type="Boolean" />
+          <Property Name="area_code" Type="Int32" />
+          <Property Name="corp_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="corp_code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="u_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ZhiFuMiMa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="i_bili" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="account_backup" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="noNumberId" Type="Int32" />
+          <Property Name="is_loan_otherarea_tag" Type="Boolean" />
+          <Property Name="render_city" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="openMoney" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="is_id_card" Type="Boolean" />
+          <Property Name="modify_time" Type="DateTime" Precision="3" />
+          <Property Name="modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sign_modify_time" Type="DateTime" Precision="3" />
+          <Property Name="sign_modify_user" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="NewBalance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="GLMen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="C18BitIdCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="A002">
+          <Key>
+            <PropertyRef Name="depcode" />
+            <PropertyRef Name="isinuse" />
+          </Key>
+          <Property Name="depcode" Type="Int32" Nullable="false" />
+          <Property Name="depname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="depin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="deptype" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="leader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="viceleader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isinuse" Type="Boolean" Nullable="false" />
+          <Property Name="des" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OnEditor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OnDate" Type="DateTime" Precision="3" />
+          <Property Name="Editor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EditTime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="0" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="A004">
+          <Key>
+            <PropertyRef Name="csid" />
+            <PropertyRef Name="cssort" />
+            <PropertyRef Name="csvalue" />
+          </Key>
+          <Property Name="csid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cssort" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="csvalue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="csname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paramvalue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isinuse" Type="Boolean" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="oneditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isdel" Type="Boolean" />
+          <Property Name="depcode" Type="Int32" />
+        </EntityType>
+        <EntityType Name="A006">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="partid" />
+            <PropertyRef Name="menuid" />
+            <PropertyRef Name="qx" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="partid" Type="Int32" Nullable="false" />
+          <Property Name="menuid" Type="Int32" Nullable="false" />
+          <Property Name="qx" Type="Int32" Nullable="false" />
+          <Property Name="PanelBTOrder" Type="Int32" />
+          <Property Name="IsBTInPanel" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="A009">
+          <Key>
+            <PropertyRef Name="menumxid" />
+            <PropertyRef Name="menuid" />
+            <PropertyRef Name="submenuid" />
+          </Key>
+          <Property Name="menumxid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menuid" Type="Int32" Nullable="false" />
+          <Property Name="submenuid" Type="Int32" Nullable="false" />
+          <Property Name="submenuorder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="A022">
+          <Key>
+            <PropertyRef Name="NeedCodeObjectName" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="NeedCodeFieldName" />
+            <PropertyRef Name="CodeOrderType" />
+            <PropertyRef Name="isdel" />
+          </Key>
+          <Property Name="NeedCodeObjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NeedCodeFieldName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="datefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="postfix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="outareafix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeOrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="filtercondition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isinuse" Type="Boolean" />
+          <Property Name="tsp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="des" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ondate" Type="DateTime" Precision="3" />
+          <Property Name="editor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="edittime" Type="DateTime" Precision="3" />
+          <Property Name="auditor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="audittime" Type="DateTime" Precision="3" />
+          <Property Name="isdel" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MSreplication_subscriptions">
+          <Key>
+            <PropertyRef Name="publisher" />
+            <PropertyRef Name="independent_agent" />
+            <PropertyRef Name="subscription_type" />
+            <PropertyRef Name="time" />
+            <PropertyRef Name="transaction_timestamp" />
+            <PropertyRef Name="update_mode" />
+            <PropertyRef Name="immediate_sync" />
+          </Key>
+          <Property Name="publisher" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="publisher_db" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="publication" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="independent_agent" Type="Boolean" Nullable="false" />
+          <Property Name="subscription_type" Type="Int32" Nullable="false" />
+          <Property Name="distribution_agent" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="transaction_timestamp" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+          <Property Name="update_mode" Type="Byte" Nullable="false" />
+          <Property Name="agent_id" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="subscription_guid" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="subid" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="immediate_sync" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MSsnapshotdeliveryprogress">
+          <Key>
+            <PropertyRef Name="session_token" />
+            <PropertyRef Name="progress_token_hash" />
+            <PropertyRef Name="progress_token" />
+          </Key>
+          <Property Name="session_token" Type="String" MaxLength="260" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="progress_token_hash" Type="Int32" Nullable="false" />
+          <Property Name="progress_token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="progress_timestamp" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityContainer Name="JmgjjPreliminaryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="A030PreUnit" EntityType="Self.A030PreUnit" />
+          <EntitySet Name="A030UnitBase" EntityType="Self.A030UnitBase" />
+          <EntitySet Name="A032accountBind" EntityType="Self.A032accountBind" />
           <EntitySet Name="A033PreFetch" EntityType="Self.A033PreFetch" />
           <EntitySet Name="A034preAccount" EntityType="Self.A034preAccount" />
+          <EntitySet Name="A034preAccount_1" EntityType="Self.A034preAccount_1" />
+          <EntitySet Name="A035preLock_1" EntityType="Self.A035preLock_1" />
           <EntitySet Name="A035preLockAndUnLock" EntityType="Self.A035preLockAndUnLock" />
+          <EntitySet Name="A035preUnLock_1" EntityType="Self.A035preUnLock_1" />
           <EntitySet Name="A036preBuJiao" EntityType="Self.A036preBuJiao" />
+          <EntitySet Name="A036preBujiao_1" EntityType="Self.A036preBujiao_1" />
           <EntitySet Name="A037preJctz" EntityType="Self.A037preJctz" />
+          <EntitySet Name="A037preJctz_1" EntityType="Self.A037preJctz_1" />
           <EntitySet Name="A038TranIn" EntityType="Self.A038TranIn" />
+          <EntitySet Name="A038TranIn_1" EntityType="Self.A038TranIn_1" />
+          <EntitySet Name="A040LoanFileInfo" EntityType="Self.A040LoanFileInfo" />
+          <EntitySet Name="A040LoanFileInfo_1" EntityType="Self.A040LoanFileInfo_1" />
+          <EntitySet Name="A050Sms" EntityType="Self.A050Sms" />
+          <EntitySet Name="t_account" EntityType="Self.t_account" />
+          <EntitySet Name="A002" EntityType="Self.A002" />
+          <EntitySet Name="A004" EntityType="Self.A004" />
+          <EntitySet Name="A006" EntityType="Self.A006" />
+          <EntitySet Name="A009" EntityType="Self.A009" />
+          <EntitySet Name="A022" EntityType="Self.A022" />
+          <EntitySet Name="MSreplication_subscriptions" EntityType="Self.MSreplication_subscriptions" />
+          <EntitySet Name="MSsnapshotdeliveryprogress" EntityType="Self.MSsnapshotdeliveryprogress" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -352,6 +1403,89 @@
                 <ScalarProperty Name="agentName" ColumnName="agentName" />
                 <ScalarProperty Name="agentTel" ColumnName="agentTel" />
                 <ScalarProperty Name="isSync" ColumnName="isSync" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A030UnitBase">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A030UnitBase">
+              <MappingFragment StoreEntitySet="A030UnitBase">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="u_account" ColumnName="u_account" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="u_quality" ColumnName="u_quality" />
+                <ScalarProperty Name="u_type" ColumnName="u_type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="officephone" ColumnName="officephone" />
+                <ScalarProperty Name="officeaddress" ColumnName="officeaddress" />
+                <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="og_code_id" ColumnName="og_code_id" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="fund_type" ColumnName="fund_type" />
+                <ScalarProperty Name="bank_for_unit" ColumnName="bank_for_unit" />
+                <ScalarProperty Name="bank_open_date" ColumnName="bank_open_date" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="bank_card" ColumnName="bank_card" />
+                <ScalarProperty Name="economy_type" ColumnName="economy_type" />
+                <ScalarProperty Name="belong_type" ColumnName="belong_type" />
+                <ScalarProperty Name="charge_unit_name" ColumnName="charge_unit_name" />
+                <ScalarProperty Name="principal" ColumnName="principal" />
+                <ScalarProperty Name="principal_phone" ColumnName="principal_phone" />
+                <ScalarProperty Name="principal_id_type" ColumnName="principal_id_type" />
+                <ScalarProperty Name="principal_id_no" ColumnName="principal_id_no" />
+                <ScalarProperty Name="principal_mobile_phone" ColumnName="principal_mobile_phone" />
+                <ScalarProperty Name="charge_unit_principal" ColumnName="charge_unit_principal" />
+                <ScalarProperty Name="charge_unit_principal_phone" ColumnName="charge_unit_principal_phone" />
+                <ScalarProperty Name="approval_unit" ColumnName="approval_unit" />
+                <ScalarProperty Name="approval_document" ColumnName="approval_document" />
+                <ScalarProperty Name="leagal_person_name" ColumnName="leagal_person_name" />
+                <ScalarProperty Name="leagal_person_cert_type" ColumnName="leagal_person_cert_type" />
+                <ScalarProperty Name="leagal_person_cert_num" ColumnName="leagal_person_cert_num" />
+                <ScalarProperty Name="leagal_person_phone" ColumnName="leagal_person_phone" />
+                <ScalarProperty Name="leagal_person_mobile_phone" ColumnName="leagal_person_mobile_phone" />
+                <ScalarProperty Name="leagal_person_email" ColumnName="leagal_person_email" />
+                <ScalarProperty Name="u_bili" ColumnName="u_bili" />
+                <ScalarProperty Name="jiaocun_create_date" ColumnName="jiaocun_create_date" />
+                <ScalarProperty Name="jiaocun_begin_date" ColumnName="jiaocun_begin_date" />
+                <ScalarProperty Name="liushuihao" ColumnName="liushuihao" />
+                <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+                <ScalarProperty Name="renderNo" ColumnName="renderNo" />
+                <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+                <ScalarProperty Name="finishdate" ColumnName="finishdate" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="print_tag" ColumnName="print_tag" />
+                <ScalarProperty Name="isPrint" ColumnName="isPrint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A032accountBind">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A032accountBind">
+              <MappingFragment StoreEntitySet="A032accountBind">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="areaCode" ColumnName="areaCode" />
+                <ScalarProperty Name="aId" ColumnName="aId" />
+                <ScalarProperty Name="uId" ColumnName="uId" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="firstBindTime" ColumnName="firstBindTime" />
+                <ScalarProperty Name="firstBingType" ColumnName="firstBingType" />
+                <ScalarProperty Name="passWord" ColumnName="passWord" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
                 <ScalarProperty Name="ondate" ColumnName="ondate" />
                 <ScalarProperty Name="editor" ColumnName="editor" />
                 <ScalarProperty Name="des" ColumnName="des" />
@@ -410,6 +1544,44 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="A034preAccount_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A034preAccount_1">
+              <MappingFragment StoreEntitySet="A034preAccount_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="workDate" ColumnName="workDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="uBili" ColumnName="uBili" />
+                <ScalarProperty Name="iBili" ColumnName="iBili" />
+                <ScalarProperty Name="uMoney" ColumnName="uMoney" />
+                <ScalarProperty Name="iMoney" ColumnName="iMoney" />
+                <ScalarProperty Name="totalMoney" ColumnName="totalMoney" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A035preLock_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A035preLock_1">
+              <MappingFragment StoreEntitySet="A035preLock_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="lockDate" ColumnName="lockDate" />
+                <ScalarProperty Name="totalMoney" ColumnName="totalMoney" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="A035preLockAndUnLock">
             <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A035preLockAndUnLock">
               <MappingFragment StoreEntitySet="A035preLockAndUnLock">
@@ -428,6 +1600,28 @@
                 <ScalarProperty Name="edittime" ColumnName="edittime" />
                 <ScalarProperty Name="auditor" ColumnName="auditor" />
                 <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A035preUnLock_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A035preUnLock_1">
+              <MappingFragment StoreEntitySet="A035preUnLock_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="unlockDate" ColumnName="unlockDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="uBili" ColumnName="uBili" />
+                <ScalarProperty Name="iBili" ColumnName="iBili" />
+                <ScalarProperty Name="uMoney" ColumnName="uMoney" />
+                <ScalarProperty Name="iMoney" ColumnName="iMoney" />
+                <ScalarProperty Name="totalMoney" ColumnName="totalMoney" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
                 <ScalarProperty Name="isdel" ColumnName="isdel" />
                 <ScalarProperty Name="tsp" ColumnName="tsp" />
               </MappingFragment>
@@ -455,6 +1649,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="A036preBujiao_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A036preBujiao_1">
+              <MappingFragment StoreEntitySet="A036preBujiao_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="beginDate" ColumnName="beginDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="uBili" ColumnName="uBili" />
+                <ScalarProperty Name="iBili" ColumnName="iBili" />
+                <ScalarProperty Name="uMoney" ColumnName="uMoney" />
+                <ScalarProperty Name="iMoney" ColumnName="iMoney" />
+                <ScalarProperty Name="patchMoney" ColumnName="patchMoney" />
+                <ScalarProperty Name="patchType" ColumnName="patchType" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="A037preJctz">
             <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A037preJctz">
               <MappingFragment StoreEntitySet="A037preJctz">
@@ -472,6 +1690,28 @@
                 <ScalarProperty Name="edittime" ColumnName="edittime" />
                 <ScalarProperty Name="auditor" ColumnName="auditor" />
                 <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A037preJctz_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A037preJctz_1">
+              <MappingFragment StoreEntitySet="A037preJctz_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="jctzDate" ColumnName="jctzDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="uBili" ColumnName="uBili" />
+                <ScalarProperty Name="iBili" ColumnName="iBili" />
+                <ScalarProperty Name="uMoney" ColumnName="uMoney" />
+                <ScalarProperty Name="iMoney" ColumnName="iMoney" />
+                <ScalarProperty Name="totalMoney" ColumnName="totalMoney" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
                 <ScalarProperty Name="isdel" ColumnName="isdel" />
                 <ScalarProperty Name="tsp" ColumnName="tsp" />
               </MappingFragment>
@@ -499,6 +1739,266 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="A038TranIn_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A038TranIn_1">
+              <MappingFragment StoreEntitySet="A038TranIn_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="responsNum" ColumnName="responsNum" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="inDate" ColumnName="inDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="uBili" ColumnName="uBili" />
+                <ScalarProperty Name="iBili" ColumnName="iBili" />
+                <ScalarProperty Name="uMoney" ColumnName="uMoney" />
+                <ScalarProperty Name="iMoney" ColumnName="iMoney" />
+                <ScalarProperty Name="totalMoney" ColumnName="totalMoney" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A040LoanFileInfo">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A040LoanFileInfo">
+              <MappingFragment StoreEntitySet="A040LoanFileInfo">
+                <ScalarProperty Name="queryId" ColumnName="queryId" />
+                <ScalarProperty Name="depCode" ColumnName="depCode" />
+                <ScalarProperty Name="bankId" ColumnName="bankId" />
+                <ScalarProperty Name="bankName" ColumnName="bankName" />
+                <ScalarProperty Name="loanName" ColumnName="loanName" />
+                <ScalarProperty Name="loanIdcard" ColumnName="loanIdcard" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="currentStep" ColumnName="currentStep" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="loanTel" ColumnName="loanTel" />
+                <ScalarProperty Name="bankTel" ColumnName="bankTel" />
+                <ScalarProperty Name="LandTel" ColumnName="LandTel" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A040LoanFileInfo_1">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A040LoanFileInfo_1">
+              <MappingFragment StoreEntitySet="A040LoanFileInfo_1">
+                <ScalarProperty Name="mxid" ColumnName="mxid" />
+                <ScalarProperty Name="queryId" ColumnName="queryId" />
+                <ScalarProperty Name="step" ColumnName="step" />
+                <ScalarProperty Name="jjDate" ColumnName="jjDate" />
+                <ScalarProperty Name="rejectDes" ColumnName="rejectDes" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A050Sms">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A050Sms">
+              <MappingFragment StoreEntitySet="A050Sms">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="smsId" ColumnName="smsId" />
+                <ScalarProperty Name="telNo" ColumnName="telNo" />
+                <ScalarProperty Name="sendContent" ColumnName="sendContent" />
+                <ScalarProperty Name="smsState" ColumnName="smsState" />
+                <ScalarProperty Name="smsDesc" ColumnName="smsDesc" />
+                <ScalarProperty Name="rptTime" ColumnName="rptTime" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_account">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.t_account">
+              <MappingFragment StoreEntitySet="t_account">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="Id_Card" ColumnName="Id_Card" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="workdate" ColumnName="workdate" />
+                <ScalarProperty Name="c_date" ColumnName="c_date" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="u_money" ColumnName="u_money" />
+                <ScalarProperty Name="i_money" ColumnName="i_money" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="accrual" ColumnName="accrual" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="sign_tag" ColumnName="sign_tag" />
+                <ScalarProperty Name="input_user" ColumnName="input_user" />
+                <ScalarProperty Name="input_time" ColumnName="input_time" />
+                <ScalarProperty Name="sign_user" ColumnName="sign_user" />
+                <ScalarProperty Name="sign_time" ColumnName="sign_time" />
+                <ScalarProperty Name="number_id" ColumnName="number_id" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="money_backup" ColumnName="money_backup" />
+                <ScalarProperty Name="fgb_account" ColumnName="fgb_account" />
+                <ScalarProperty Name="u_account" ColumnName="u_account" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="bank_card" ColumnName="bank_card" />
+                <ScalarProperty Name="Render_Money" ColumnName="Render_Money" />
+                <ScalarProperty Name="bank_u_name" ColumnName="bank_u_name" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="xml_id" ColumnName="xml_id" />
+                <ScalarProperty Name="fact_date" ColumnName="fact_date" />
+                <ScalarProperty Name="bili" ColumnName="bili" />
+                <ScalarProperty Name="over_area_tag" ColumnName="over_area_tag" />
+                <ScalarProperty Name="area_code" ColumnName="area_code" />
+                <ScalarProperty Name="corp_type" ColumnName="corp_type" />
+                <ScalarProperty Name="corp_code" ColumnName="corp_code" />
+                <ScalarProperty Name="u_bili" ColumnName="u_bili" />
+                <ScalarProperty Name="ZhiFuMiMa" ColumnName="ZhiFuMiMa" />
+                <ScalarProperty Name="i_bili" ColumnName="i_bili" />
+                <ScalarProperty Name="account_backup" ColumnName="account_backup" />
+                <ScalarProperty Name="noNumberId" ColumnName="noNumberId" />
+                <ScalarProperty Name="is_loan_otherarea_tag" ColumnName="is_loan_otherarea_tag" />
+                <ScalarProperty Name="render_city" ColumnName="render_city" />
+                <ScalarProperty Name="openMoney" ColumnName="openMoney" />
+                <ScalarProperty Name="is_id_card" ColumnName="is_id_card" />
+                <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+                <ScalarProperty Name="modify_user" ColumnName="modify_user" />
+                <ScalarProperty Name="sign_modify_time" ColumnName="sign_modify_time" />
+                <ScalarProperty Name="sign_modify_user" ColumnName="sign_modify_user" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="NewBalance" ColumnName="NewBalance" />
+                <ScalarProperty Name="GLMen" ColumnName="GLMen" />
+                <ScalarProperty Name="C18BitIdCard" ColumnName="18BitIdCard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A002">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A002">
+              <MappingFragment StoreEntitySet="A002">
+                <ScalarProperty Name="depcode" ColumnName="depcode" />
+                <ScalarProperty Name="depname" ColumnName="depname" />
+                <ScalarProperty Name="depin" ColumnName="depin" />
+                <ScalarProperty Name="deptype" ColumnName="deptype" />
+                <ScalarProperty Name="leader" ColumnName="leader" />
+                <ScalarProperty Name="viceleader" ColumnName="viceleader" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="isinuse" ColumnName="isinuse" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="OnEditor" ColumnName="OnEditor" />
+                <ScalarProperty Name="OnDate" ColumnName="OnDate" />
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="EditTime" ColumnName="EditTime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A004">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A004">
+              <MappingFragment StoreEntitySet="A004">
+                <ScalarProperty Name="csid" ColumnName="csid" />
+                <ScalarProperty Name="cssort" ColumnName="cssort" />
+                <ScalarProperty Name="csvalue" ColumnName="csvalue" />
+                <ScalarProperty Name="csname" ColumnName="csname" />
+                <ScalarProperty Name="paramvalue" ColumnName="paramvalue" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="isinuse" ColumnName="isinuse" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="oneditor" ColumnName="oneditor" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+                <ScalarProperty Name="depcode" ColumnName="depcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A006">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A006">
+              <MappingFragment StoreEntitySet="A006">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="partid" ColumnName="partid" />
+                <ScalarProperty Name="menuid" ColumnName="menuid" />
+                <ScalarProperty Name="qx" ColumnName="qx" />
+                <ScalarProperty Name="PanelBTOrder" ColumnName="PanelBTOrder" />
+                <ScalarProperty Name="IsBTInPanel" ColumnName="IsBTInPanel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A009">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A009">
+              <MappingFragment StoreEntitySet="A009">
+                <ScalarProperty Name="menumxid" ColumnName="menumxid" />
+                <ScalarProperty Name="menuid" ColumnName="menuid" />
+                <ScalarProperty Name="submenuid" ColumnName="submenuid" />
+                <ScalarProperty Name="submenuorder" ColumnName="submenuorder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A022">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.A022">
+              <MappingFragment StoreEntitySet="A022">
+                <ScalarProperty Name="NeedCodeObjectName" ColumnName="NeedCodeObjectName" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="NeedCodeFieldName" ColumnName="NeedCodeFieldName" />
+                <ScalarProperty Name="prefix" ColumnName="prefix" />
+                <ScalarProperty Name="datefix" ColumnName="datefix" />
+                <ScalarProperty Name="postfix" ColumnName="postfix" />
+                <ScalarProperty Name="outareafix" ColumnName="outareafix" />
+                <ScalarProperty Name="CodeOrderType" ColumnName="CodeOrderType" />
+                <ScalarProperty Name="filtercondition" ColumnName="filtercondition" />
+                <ScalarProperty Name="isinuse" ColumnName="isinuse" />
+                <ScalarProperty Name="tsp" ColumnName="tsp" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="ondate" ColumnName="ondate" />
+                <ScalarProperty Name="editor" ColumnName="editor" />
+                <ScalarProperty Name="edittime" ColumnName="edittime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="audittime" ColumnName="audittime" />
+                <ScalarProperty Name="isdel" ColumnName="isdel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSreplication_subscriptions">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.MSreplication_subscriptions">
+              <MappingFragment StoreEntitySet="MSreplication_subscriptions">
+                <ScalarProperty Name="publisher" ColumnName="publisher" />
+                <ScalarProperty Name="publisher_db" ColumnName="publisher_db" />
+                <ScalarProperty Name="publication" ColumnName="publication" />
+                <ScalarProperty Name="independent_agent" ColumnName="independent_agent" />
+                <ScalarProperty Name="subscription_type" ColumnName="subscription_type" />
+                <ScalarProperty Name="distribution_agent" ColumnName="distribution_agent" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="transaction_timestamp" ColumnName="transaction_timestamp" />
+                <ScalarProperty Name="update_mode" ColumnName="update_mode" />
+                <ScalarProperty Name="agent_id" ColumnName="agent_id" />
+                <ScalarProperty Name="subscription_guid" ColumnName="subscription_guid" />
+                <ScalarProperty Name="subid" ColumnName="subid" />
+                <ScalarProperty Name="immediate_sync" ColumnName="immediate_sync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSsnapshotdeliveryprogress">
+            <EntityTypeMapping TypeName="JmgjjPreliminaryModel.MSsnapshotdeliveryprogress">
+              <MappingFragment StoreEntitySet="MSsnapshotdeliveryprogress">
+                <ScalarProperty Name="session_token" ColumnName="session_token" />
+                <ScalarProperty Name="progress_token_hash" ColumnName="progress_token_hash" />
+                <ScalarProperty Name="progress_token" ColumnName="progress_token" />
+                <ScalarProperty Name="progress_timestamp" ColumnName="progress_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -514,7 +2014,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
       </DesignerInfoPropertySet>

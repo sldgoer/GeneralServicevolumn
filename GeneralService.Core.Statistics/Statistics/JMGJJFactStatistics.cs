@@ -33,6 +33,7 @@ namespace GeneralService.Core.Statistics
 
         }
 
+        #region 私有方法
         /// <summary>
         /// 个人开户数统计
         /// </summary>
@@ -193,5 +194,6 @@ namespace GeneralService.Core.Statistics
 
         }
 
+        #endregion
     }
 }

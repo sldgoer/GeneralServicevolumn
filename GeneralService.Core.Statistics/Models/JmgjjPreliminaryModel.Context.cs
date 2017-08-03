@@ -26,11 +26,30 @@ namespace GeneralService.Core.Statistics.Models
         }
     
         public virtual DbSet<A030PreUnit> A030PreUnit { get; set; }
+        public virtual DbSet<A030UnitBase> A030UnitBase { get; set; }
+        public virtual DbSet<A032accountBind> A032accountBind { get; set; }
         public virtual DbSet<A033PreFetch> A033PreFetch { get; set; }
         public virtual DbSet<A034preAccount> A034preAccount { get; set; }
+        public virtual DbSet<A034preAccount_1> A034preAccount_1 { get; set; }
+        public virtual DbSet<A035preLock_1> A035preLock_1 { get; set; }
         public virtual DbSet<A035preLockAndUnLock> A035preLockAndUnLock { get; set; }
+        public virtual DbSet<A035preUnLock_1> A035preUnLock_1 { get; set; }
         public virtual DbSet<A036preBuJiao> A036preBuJiao { get; set; }
+        public virtual DbSet<A036preBujiao_1> A036preBujiao_1 { get; set; }
         public virtual DbSet<A037preJctz> A037preJctz { get; set; }
+        public virtual DbSet<A037preJctz_1> A037preJctz_1 { get; set; }
         public virtual DbSet<A038TranIn> A038TranIn { get; set; }
+        public virtual DbSet<A038TranIn_1> A038TranIn_1 { get; set; }
+        public virtual DbSet<A040LoanFileInfo> A040LoanFileInfo { get; set; }
+        public virtual DbSet<A040LoanFileInfo_1> A040LoanFileInfo_1 { get; set; }
+        public virtual DbSet<A050Sms> A050Sms { get; set; }
+        public virtual DbSet<t_account> t_account { get; set; }
+        public virtual DbSet<A002> A002 { get; set; }
+        public virtual DbSet<A004> A004 { get; set; }
+        public virtual DbSet<A006> A006 { get; set; }
+        public virtual DbSet<A009> A009 { get; set; }
+        public virtual DbSet<A022> A022 { get; set; }
+        public virtual DbSet<MSreplication_subscriptions> MSreplication_subscriptions { get; set; }
+        public virtual DbSet<MSsnapshotdeliveryprogress> MSsnapshotdeliveryprogress { get; set; }
     }
 }

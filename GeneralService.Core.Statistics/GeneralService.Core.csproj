@@ -62,7 +62,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\A002.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A004.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A006.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A009.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A022.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\A030PreUnit.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A030UnitBase.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A032accountBind.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\A033PreFetch.cs">
@@ -71,16 +92,43 @@
     <Compile Include="Models\A034preAccount.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\A034preAccount_1.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\A035preLockAndUnLock.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A035preLock_1.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A035preUnLock_1.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\A036preBuJiao.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\A036preBujiao_1.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\A037preJctz.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\A037preJctz_1.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\A038TranIn.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A038TranIn_1.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A040LoanFileInfo.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A040LoanFileInfo_1.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\A050Sms.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BlackList.cs">
@@ -149,11 +197,17 @@
     <Compile Include="Models\Managers.cs">
       <DependentUpon>GjjBookingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MSreplication_subscriptions.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSsnapshotdeliveryprogress.cs">
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SpecialDay.cs">
       <DependentUpon>GjjBookingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_account.cs">
-      <DependentUpon>JMGJJFactModel.tt</DependentUpon>
+      <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_account_autofetch.cs">
       <DependentUpon>JMGJJFactModel.tt</DependentUpon>
