@@ -195,5 +195,6 @@ namespace GeneralService.Core.Statistics
         }
 
         #endregion
+
     }
 }
