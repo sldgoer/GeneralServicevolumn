@@ -107,7 +107,7 @@ namespace GeneralService.Core.Statistics
         private long t_account_loanVolumnStatistics(DateTime DateBegin, DateTime DateEnd)
         {
             return jmgjjfactEntities.t_account_loan
-                .Where(x => DateTime.Compare(x.final_confirm_time.Value, DateBegin) >= 0 && DateTime.Compare(x.final_confirm_time.Value, DateEnd) < 0 && x.sign_tag > 2)
+                .Where(x => DateTime.Compare(x.final_confirm_time.Value, DateBegin) >= 0 && DateTime.Compare(x.fore_confirm_time.Value, DateEnd) < 0 && x.sign_tag > 2)
                 .Select(x => x.id)
                 .Distinct()
                 .Count();

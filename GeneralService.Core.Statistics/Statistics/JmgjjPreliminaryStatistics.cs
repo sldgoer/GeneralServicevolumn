@@ -19,7 +19,7 @@ namespace GeneralService.Core.Statistics
             var res = jmgjjpreliminaryentities.A033PreFetch                
                 .Where(x => DateTime.Compare(x.ondate.Value, DateBegin) >= 0 && DateTime.Compare(x.ondate.Value, DateEnd) <0 && x.isdel==false)
                 .GroupBy(g => g.editor)
-                .Select(s => new { BusinessName="个人提取预审：", CallPlatForm = s.Key, Count=s.Count() });
+                .Select(s => new { BusinessName="个人提取预审", CallPlatForm = s.Key, Count=s.Count() });
 
             return JsonConvert.SerializeObject(res);
         }

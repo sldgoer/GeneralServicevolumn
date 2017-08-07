@@ -37,7 +37,7 @@ namespace GeneralService.ServiceVolume.ConsoleTests
                     unitVolList = JsonConvert.DeserializeObject<List<BusinessStatistics>>(JsonPreUnitStatistics);
 
                     dtBegin = dtBegin.AddMonths(1);
-                    dtBegin = dtEnd.AddMonths(1);
+                    dtEnd = dtEnd.AddMonths(1);
 
                     foreach (var b in bsVolList)
                     {
@@ -49,7 +49,7 @@ namespace GeneralService.ServiceVolume.ConsoleTests
                     }
                     foreach(var u in unitVolList)
                     {
-                        Console.WriteLine(unitVolList);
+                        Console.WriteLine(u);
                     }
 
 
@@ -74,7 +74,7 @@ namespace GeneralService.ServiceVolume.ConsoleTests
     class BusinessStatistics
     {
         public string BusinessName { get; set; }
-        public int Count { get; set; }
+        public long Count { get; set; }
 
         public override string ToString()
         {
@@ -85,7 +85,7 @@ namespace GeneralService.ServiceVolume.ConsoleTests
     {
         public string BusinessName { get; set; }
         public string CallPlatForm { get; set; }
-        public string Count { get; set; }
+        public long Count { get; set; }
 
         public override string ToString()
         {
