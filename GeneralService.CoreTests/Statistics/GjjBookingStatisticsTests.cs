@@ -16,8 +16,8 @@ namespace GeneralService.Core.Statistics.Tests
         {
             GjjBookingStatistics gbs = new GjjBookingStatistics();
             
-            DateTime dtBegin = Convert.ToDateTime("2017-7-1");
-            DateTime dtEnd = Convert.ToDateTime("2017-7-31").AddDays(1);
+            DateTime dtBegin = Convert.ToDateTime("2017-8-1");
+            DateTime dtEnd = Convert.ToDateTime("2017-8-31").AddDays(1);
 
             Console.Write(gbs.BookingPlatFormVolumnStatistics(dtBegin, dtEnd));
             Console.Write(gbs.BookingCompleteVolumnStatistics(dtBegin,dtEnd));

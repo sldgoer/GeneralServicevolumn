@@ -15,7 +15,7 @@ namespace GeneralService.Core.Statistics.Tests
         public void getWeixinQueryStatisticsTest()
         {
             WeixinQueryStatistics wqs = new WeixinQueryStatistics();
-            var date = Convert.ToDateTime("2017-01-11");
+            var date = Convert.ToDateTime("2017-1-1");
             var res = wqs.getWeixinQueryStatistics(@"F:\Log", date);
             Assert.IsTrue(res>1388);
             //Assert.IsInstanceOfType(date, typeof(DateTime));

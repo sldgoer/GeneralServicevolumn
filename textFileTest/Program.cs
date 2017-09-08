@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace textFileTest
 {
-    using GenaralService.Utility.FileUtility;
+    using GeneralService.Utility.FileUtility;
     using GenaralService.Utility.TextFileUtility;
     class Program
     {
@@ -14,7 +14,7 @@ namespace textFileTest
         {
             FilesHandler fh = new FilesHandler();
             txtContentHandler tch = new txtContentHandler();
-            var fn = fh.getFilenamesFromFolder(@"F:\Log", @"*.log");
+            var fn = fh.getFilenamesFromFolder(@"H:\Log", @"*.log");
 
 
             var res=tch.getTxtAllLinesString(fn[0]);
