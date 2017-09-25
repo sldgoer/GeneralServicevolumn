@@ -8,10 +8,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace GeneralService.Comunicate.Message
+namespace GeneralService.Comunicate.SocketClient
 {
     using Models;
-    public class TextMessage
+    public class SocketClient
     {
         public int port = 0;
         public string ismgIP = "";
@@ -69,7 +69,7 @@ namespace GeneralService.Comunicate.Message
             try
             {
                 // Create the state object.     
-                StateOject state = new StateOject();
+                 StateOject state = new StateOject();
                 state.workSocket = client;
                 // Begin receiving the data from the remote device.     
                 client.BeginReceive(state.recieveBuffer, 0, StateOject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);

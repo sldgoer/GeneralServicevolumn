@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.CoreTests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneralService.Comunicate", "GeneralService.Comunicate", "{3361F5CD-DF59-421E-BE4F-A28E354D509E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.Comunicate.Message", "GeneralService.Comunicate.Message\GeneralService.Comunicate.Message.csproj", "{CFAD3EF2-4D3B-4F29-B8E7-36802385C8D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.Comunicate.SocketClient", "GeneralService.Comunicate.Message\GeneralService.Comunicate.SocketClient.csproj", "{CFAD3EF2-4D3B-4F29-B8E7-36802385C8D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralService.Comunicate.MessageTests", "GeneralService.Comunicate.MessageTests\GeneralService.Comunicate.MessageTests.csproj", "{DE5F88B5-408E-4AEA-92DB-02FDF92C4B99}"
 EndProject

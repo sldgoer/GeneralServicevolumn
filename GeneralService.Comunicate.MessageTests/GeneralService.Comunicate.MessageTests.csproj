@@ -54,9 +54,9 @@
     <Compile Include="TextMessageTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeneralService.Comunicate.Message\GeneralService.Comunicate.Message.csproj">
+    <ProjectReference Include="..\GeneralService.Comunicate.Message\GeneralService.Comunicate.SocketClient.csproj">
       <Project>{CFAD3EF2-4D3B-4F29-B8E7-36802385C8D0}</Project>
-      <Name>GeneralService.Comunicate.Message</Name>
+      <Name>GeneralService.Comunicate.SocketClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

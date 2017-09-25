@@ -14,7 +14,7 @@ namespace GeneralService.Comunicate.Message.Tests
         [TestMethod()]
         public void StartClientTest()
         {
-            TextMessage tm = new TextMessage();
+            SocketClient tm = new SocketClient();
             tm.ismgIP = "211.139.144.201";
             tm.port = 7890;
             tm.StartClient();

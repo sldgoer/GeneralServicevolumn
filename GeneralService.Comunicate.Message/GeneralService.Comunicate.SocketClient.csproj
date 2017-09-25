@@ -40,14 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Models\MessageModels\Msg.cs" />
     <Compile Include="Models\MessageModels\MsgBody.cs" />
     <Compile Include="Models\MessageModels\MsgPiece.cs" />
     <Compile Include="Models\StateOject.cs" />
     <Compile Include="Models\MessageModels\MsgHeader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextMessage.cs" />
+    <Compile Include="SocketClient.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

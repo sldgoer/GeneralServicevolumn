@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace GeneralService.Comunicate.Message.Models
+namespace GeneralService.Comunicate.SocketClient.Models
 {
     public class StateOject
     {
