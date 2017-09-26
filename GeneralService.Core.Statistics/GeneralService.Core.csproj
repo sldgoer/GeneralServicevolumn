@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Message\Interface\ITextMessage.cs" />
+    <Compile Include="Message\Models\CMPP_CONNECT.cs" />
+    <Compile Include="Message\Models\CMPP_CONNECT_RESP.cs" />
+    <Compile Include="Message\Models\CMPP_SUBMIT.cs" />
+    <Compile Include="Message\Models\CMPP_SUBMIT_RESP.cs" />
+    <Compile Include="Message\TextMessage.cs" />
     <Compile Include="Models\A002.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
@@ -197,6 +203,7 @@
     <Compile Include="Models\Managers.cs">
       <DependentUpon>GjjBookingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Message\Models\MsgBase.cs" />
     <Compile Include="Models\MSreplication_subscriptions.cs">
       <DependentUpon>JmgjjPreliminaryModel.tt</DependentUpon>
     </Compile>
