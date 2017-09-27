@@ -25,7 +25,7 @@ namespace GeneralService.Comunicate.SocketClient
         private Socket Client = null;
 
 
-        public void StartClient(out Socket socket)
+        public void StartClient()
         {
             if (port == 0 || ismgIP == "")
             {
@@ -43,7 +43,7 @@ namespace GeneralService.Comunicate.SocketClient
                 Client.BeginConnect(ismgEndPoint, new AsyncCallback(ConnectCallback),Client);
                 connectDone.WaitOne();
 
-                socket = Client;
+                //socket = Client;
             }
             catch (Exception ex)
             {
