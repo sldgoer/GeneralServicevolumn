@@ -8,6 +8,7 @@ namespace GeneralService.Core.Message
 {
     using Interface;
     using Models;
+    using Comunicate.SocketClient;
     public class TextMessage : ITextMessage
     {
         //const string ismg_Ip= "211.139.144.201";
@@ -26,9 +27,38 @@ namespace GeneralService.Core.Message
 
         #endregion
 
+        SocketClient sc = new SocketClient();
+        //byte[] headerBytes;
+        
+
         public CMPP_CONNECT_RESP ConnectToISMG(CMPP_CONNECT ConnectInfo)
         {
+            sc.ismgIP = "211.139.144.201";
+            sc.port = 7890;
+
             cmpp_connect = ConnectInfo;
+
+            byte[] Total_Lenth = UintToByte(cmpp_connect.Total_Length, 4);
+            byte[] Command_Id = UintToByte(cmpp_connect.Command_Id, 4);
+            byte[] Sequence_Id = UintToByte(cmpp_connect.Sequence_Id, 4);
+
+            byte[] Source_Addr = StringToOcet(cmpp_connect.Source_Addr, 6);
+            byte[] AuthenticatorSource = cmpp_connect.AuthenticatorSource;
+            byte[] Version = new byte[1];
+            Version[0] = cmpp_connect.Version;
+            byte[] Timestamp = UintToByte(cmpp_connect.Timestamp,4);
+
+            List<byte[]> byteList = new List<byte[]>();
+            byteList.Add(Total_Lenth);
+            byteList.Add(Command_Id);
+            byteList.Add(Sequence_Id);
+            byteList.Add(Source_Addr);
+            byteList.Add(AuthenticatorSource);
+            byteList.Add(Version);
+            byteList.Add(Timestamp);
+
+            
+            //cmpp_connect.            
 
             throw new NotImplementedException();
         }
@@ -64,9 +94,38 @@ namespace GeneralService.Core.Message
         {
             byte[] buffer = new byte[BufferSize];
             byte[] tempbuffer = BitConverter.GetBytes(Value);
+            Buffer.BlockCopy(tempbuffer, 0, buffer, 0, BufferSize);
+
+            return buffer;
+
+        }
+
+        private byte[] StringToOcet(string Value, int BufferSize)
+        {
+            byte[] buffer = new byte[BufferSize];
+            for (int i = 0; i < BufferSize; i++)
+            {
+                buffer[i] = 0x00;
+            }
+
+            byte[] tempbuffer = Encoding.ASCII.GetBytes(Value);
             Buffer.BlockCopy(tempbuffer, tempbuffer.Length - BufferSize, buffer, 0, BufferSize);
 
             return buffer;
+        }
+        
+        private byte[] GetPackageBytes(List<byte[]> ByteList,int DestByteLen)
+        {
+            byte[] DestBytes = new byte[DestByteLen];
+
+            int copy_index = 0;
+            foreach(byte[] b in ByteList)
+            {
+                b.CopyTo(DestBytes, copy_index);
+                copy_index += b.Length;
+            }
+
+            return DestBytes;
         }
 
         public enum CMPP_Command_Id : uint

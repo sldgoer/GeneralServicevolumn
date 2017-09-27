@@ -8,6 +8,9 @@ namespace GeneralService.Core.Message.Models
 {
     public class CMPP_CONNECT_RESP : MsgBase
     {
+        public uint Total_Len = 4 + 4 + 4 + 1 + 16 + 1;
+        public uint Body_Len = 1 + 16 + 1;
+
         //状态
         //0：正确
         //1：消息结构错

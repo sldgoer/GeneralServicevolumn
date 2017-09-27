@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace GeneralService.Core.Message.Interface
 {
+    using Models;
     interface ITextMessage
     {
-        object ConnectToISMG(object ConnectionObject);
+        CMPP_CONNECT_RESP ConnectToISMG(CMPP_CONNECT ConnectionObject);
 
         object Send(string Mobile,string Content);
         void BatchSend(List<string> MobileList, string Content);

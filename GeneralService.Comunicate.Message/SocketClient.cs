@@ -22,7 +22,10 @@ namespace GeneralService.Comunicate.SocketClient
         // The response from the remote device.     
         private static String response = String.Empty;
 
-        public void StartClient()
+        private Socket Client = null;
+
+
+        public void StartClient(out Socket socket)
         {
             if (port == 0 || ismgIP == "")
             {
@@ -35,10 +38,12 @@ namespace GeneralService.Comunicate.SocketClient
                 IPAddress ismgIpAddress = IPAddress.Parse(ismgIP);
                 IPEndPoint ismgEndPoint = new IPEndPoint(ismgIpAddress, port);
 
-                Socket ispClient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                ispClient.BeginConnect(ismgEndPoint, new AsyncCallback(ConnectCallback),ispClient);
+                Client.BeginConnect(ismgEndPoint, new AsyncCallback(ConnectCallback),Client);
                 connectDone.WaitOne();
+
+                socket = Client;
             }
             catch (Exception ex)
             {

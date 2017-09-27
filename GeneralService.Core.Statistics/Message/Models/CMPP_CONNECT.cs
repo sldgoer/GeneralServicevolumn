@@ -8,8 +8,11 @@ namespace GeneralService.Core.Message.Models
 {
     public class CMPP_CONNECT : MsgBase
     {
+        public uint Total_Len = 4 + 4 + 4 + 6 + 16 + 1 + 4;
+        public uint Body_Len = 6 + 16 + 1 + 4;
+
         //源地址，此处为SP_Id，即SP的企业代码。
-        public byte[] Source_Addr;
+        public string Source_Addr;
 
         //用于鉴别源地址。其值通过单向MD5 hash计算得出，表示如下：
         //AuthenticatorSource =

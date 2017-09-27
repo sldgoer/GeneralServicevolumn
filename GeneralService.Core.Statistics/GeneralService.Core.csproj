@@ -41,6 +41,9 @@
     <Reference Include="GenaralService.Utility.FileUtility">
       <HintPath>..\GenaralService.Utility.FileUtility\bin\Debug\GenaralService.Utility.FileUtility.dll</HintPath>
     </Reference>
+    <Reference Include="GeneralService.Comunicate.Message">
+      <HintPath>..\GeneralService.Comunicate.Message\bin\Debug\GeneralService.Comunicate.Message.dll</HintPath>
+    </Reference>
     <Reference Include="GeneralService.Utility.TextFileUtility">
       <HintPath>..\GeneralService.Utility.TextFileUtility\bin\Debug\GeneralService.Utility.TextFileUtility.dll</HintPath>
     </Reference>
