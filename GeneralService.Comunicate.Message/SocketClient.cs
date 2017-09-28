@@ -24,6 +24,14 @@ namespace GeneralService.Comunicate.SocketClient
 
         private Socket Client = null;
 
+        public delegate void Sockect_OkEventHandler(object sender, EventArgs e);
+        public event EventHandler<SocketClientEventArgs> Socket_OK;
+
+        public delegate void Package_SentEventHandler(object sender, EventArgs e);
+        public event EventHandler<SocketClientEventArgs> Package_Sent;
+
+        public delegate void Package_RecievedHandler(object sender, EventArgs e);
+        public event EventHandler<SocketClientEventArgs> Package_Recieved;
 
         public void StartClient()
         {
@@ -42,6 +50,11 @@ namespace GeneralService.Comunicate.SocketClient
 
                 Client.BeginConnect(ismgEndPoint, new AsyncCallback(ConnectCallback),Client);
                 connectDone.WaitOne();
+
+                SocketClientEventArgs e = new SocketClientEventArgs();
+                e.Feeckback = null;
+                Socket_OK(this, e);
+                
 
                 //socket = Client;
             }
@@ -62,10 +75,11 @@ namespace GeneralService.Comunicate.SocketClient
                 Console.WriteLine("Socket connected to {0}", client.RemoteEndPoint.ToString());
                 // Signal that the connection has been made.     
                 connectDone.Set();
+
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                throw e;
             }
         }
 
@@ -74,10 +88,14 @@ namespace GeneralService.Comunicate.SocketClient
             try
             {
                 // Create the state object.     
-                 StateOject state = new StateOject();
+                StateOject state = new StateOject();
                 state.workSocket = client;
                 // Begin receiving the data from the remote device.     
                 client.BeginReceive(state.recieveBuffer, 0, StateOject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
+
+                SocketClientEventArgs e = new SocketClientEventArgs();
+                e.Feeckback = null;
+                Package_Recieved(this, e);
             }
             catch (Exception e)
             {
@@ -126,6 +144,10 @@ namespace GeneralService.Comunicate.SocketClient
             //byte[] byteData = Encoding.ASCII.GetBytes(data);
             // Begin sending the data to the remote device.     
             client.BeginSend(data, 0, data.Length, 0, new AsyncCallback(SendCallback), client);
+
+            SocketClientEventArgs e = new SocketClientEventArgs();
+            e.Feeckback = null;
+            Package_Sent(this, e);
         }
 
         private void SendCallback(IAsyncResult ar)

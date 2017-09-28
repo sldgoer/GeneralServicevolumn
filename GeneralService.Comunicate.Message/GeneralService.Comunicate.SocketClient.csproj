@@ -43,6 +43,7 @@
     <Compile Include="Models\MessageModels\Msg.cs" />
     <Compile Include="Models\MessageModels\MsgBody.cs" />
     <Compile Include="Models\MessageModels\MsgPiece.cs" />
+    <Compile Include="Models\SocketClientEventArgs.cs" />
     <Compile Include="Models\StateOject.cs" />
     <Compile Include="Models\MessageModels\MsgHeader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
