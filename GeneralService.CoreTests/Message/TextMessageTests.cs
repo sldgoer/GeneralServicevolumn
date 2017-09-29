@@ -32,18 +32,18 @@ namespace GeneralService.Core.Message.Tests
             const string SP_Account = "J01615";
             const string SP_Secrect = "RMZVv%9U";
 
-            TextMessage tm = new TextMessage();
-            tm.EstablishSocket(ismg_Ip,port);
+            //TextMessage tm = new TextMessage();
+            //tm.EstablishSocket(ismg_Ip,port);
             
-            Models.CMPP_CONNECT cc = new Models.CMPP_CONNECT();
-            cc.Total_Length = cc.Header_Len + cc.Body_Len;
-            cc.Command_Id = 0x00000001;
-            cc.Sequence_Id = 0x00000001;
-            cc.Source_Addr = SP_Id;
+            //Models.CMPP_CONNECT cc = new Models.CMPP_CONNECT();
+            //cc.Total_Length = cc.Header_Len + cc.Body_Len;
+            //cc.Command_Id = 0x00000001;
+            //cc.Sequence_Id = 0x00000001;
+            //cc.Source_Addr = SP_Id;
 
-            MD5 md5 = new MD5CryptoServiceProvider();
+            //MD5 md5 = new MD5CryptoServiceProvider();
 
-            cc.AuthenticatorSource=md5.ComputeHash()
+            //cc.AuthenticatorSource=md5.ComputeHash()
 
             Assert.Fail();
         }

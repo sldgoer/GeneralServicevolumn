@@ -24,6 +24,7 @@ namespace GeneralService.Comunicate.SocketClient
 
         private Socket Client = null;
 
+        #region 事件定义
         public delegate void Sockect_OkEventHandler(object sender, EventArgs e);
         public event EventHandler<SocketClientEventArgs> Socket_OK;
 
@@ -32,6 +33,7 @@ namespace GeneralService.Comunicate.SocketClient
 
         public delegate void Package_RecievedHandler(object sender, EventArgs e);
         public event EventHandler<SocketClientEventArgs> Package_Recieved;
+        #endregion
 
         public void StartClient()
         {

@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC1C98C6-BA7F-412B-9DC7-D38DE3D39815}</ProjectGuid>
+    <ProjectGuid>{F88D7A37-87E9-4942-8924-1300DFECC428}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GenerralService.Utility.Tests</RootNamespace>
-    <AssemblyName>GenerralService.Utility.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>GeneralService.Utility.ByteUtilityTests</RootNamespace>
+    <AssemblyName>GeneralService.Utility.ByteUtilityTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -51,22 +51,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BytesHandlerTests.cs" />
-    <Compile Include="txtContentHandlerTests.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenaralService.Utility.FileUtility\GeneralService.Utility.FileUtility.csproj">
-      <Project>{25E3FB84-CEE6-4550-9B44-8705FB2A55A7}</Project>
-      <Name>GeneralService.Utility.FileUtility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GeneralService.Utility.ByteUtility\GeneralService.Utility.ByteUtility.csproj">
       <Project>{6D82EF06-0722-4B64-9E44-D8ECE8C886DC}</Project>
       <Name>GeneralService.Utility.ByteUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GeneralService.Utility.TextFileUtility\GeneralService.Utility.TextFileUtility.csproj">
-      <Project>{58ED23B6-2D0F-4A8B-B731-71D8BF01A245}</Project>
-      <Name>GeneralService.Utility.TextFileUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
