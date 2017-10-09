@@ -15,13 +15,15 @@ namespace GeneralService.Core.Statistics.Tests
         public void getWeixinQueryStatisticsTest()
         {
             WeixinQueryStatistics wqs = new WeixinQueryStatistics();
-            var date = Convert.ToDateTime("2017-1-1");
-            var res = wqs.getWeixinQueryStatistics(@"F:\Log", date);
-            Assert.IsTrue(res>1388);
+            var date = Convert.ToDateTime("2017-9-1");
+            var res = wqs.getWeixinQueryStatistics(@"H:\Log", date);
+            //Assert.IsTrue(res>1388);
             //Assert.IsInstanceOfType(date, typeof(DateTime));
             //Assert.IsNotNull(res);
-            Assert.IsInstanceOfType(res, typeof(int));
-            //Assert.Fail();
+            //Assert.IsInstanceOfType(res, typeof(int));
+            Console.Write(res);
+
+            Assert.Fail();
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Text;
 namespace GeneralService.Comunicate.SocketClient
 {
     using Models;
-    public class SocketClient
+    public class SClient
     {
         public int port = 0;
         public string ismgIP = "";
@@ -54,7 +54,7 @@ namespace GeneralService.Comunicate.SocketClient
                 connectDone.WaitOne();
 
                 SocketClientEventArgs e = new SocketClientEventArgs();
-                e.Feeckback = null;
+                e.Feeckback = new byte[] { 0 };
                 Socket_OK(this, e);
                 
 

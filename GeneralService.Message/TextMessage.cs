@@ -51,7 +51,7 @@ namespace GeneralService.Message
         //public delegate void ISMG_Message
         #endregion
 
-        private SocketClient sc = new SocketClient();
+        private SClient sc = new SClient();
         private BytesHandler bh = new BytesHandler();
         
         public TextMessage(string service_id,string corp_id,string business_id,string user_id,string secret,string cmpp_version,string ip,int port)

@@ -16,10 +16,10 @@ namespace GeneralService.ServiceVolume.ConsoleTests
         {
             JMGJJFactStatistics jfs = new JMGJJFactStatistics();
             JmgjjPreliminaryStatistics jps = new JmgjjPreliminaryStatistics();
-            DateTime dtBegin = Convert.ToDateTime("2017-8-1");
-            DateTime dtEnd = Convert.ToDateTime("2017-8-31");
+            DateTime dtBegin = Convert.ToDateTime("2017-9-1");
+            DateTime dtEnd = Convert.ToDateTime("2017-9-30");
 
-            while (dtBegin.Month == 8)
+            while (dtBegin.Month == 9)
             {
                 Console.WriteLine("========================" + dtBegin.Month + "月======================");
 
