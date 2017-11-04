@@ -8,6 +8,7 @@ namespace GeneralService.Message.Models
 {
     public class ISMGEventArgs:EventArgs
     {
+        //
         public int Result;
         public string Message;
     }

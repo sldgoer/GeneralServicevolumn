@@ -15,6 +15,7 @@ namespace GeneralService.Comunicate.SocketClient.Models
         public Socket workSocket = null;
         public const int BufferSize = 256;
         public byte[] recieveBuffer = new byte[BufferSize];
-        public StringBuilder recieveSB = new StringBuilder();
+        public List<byte[]> recieveBytes = new List<byte[]>();
+        //public StringBuilder recieveSB = new StringBuilder();
     }
 }

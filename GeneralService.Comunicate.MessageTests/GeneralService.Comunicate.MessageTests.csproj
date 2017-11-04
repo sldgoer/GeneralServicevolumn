@@ -37,7 +37,13 @@
   <ItemGroup>
     <Reference Include="GeneralService.Comunicate.Message, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\GeneralService.Comunicate.Message\bin\Debug\GeneralService.Comunicate.Message.dll</HintPath>
+      <HintPath>..\GeneralService.Message\bin\Debug\GeneralService.Comunicate.Message.dll</HintPath>
+    </Reference>
+    <Reference Include="GeneralService.Message">
+      <HintPath>..\GeneralService.Message\bin\Debug\GeneralService.Message.dll</HintPath>
+    </Reference>
+    <Reference Include="GeneralService.Utility.ByteUtility">
+      <HintPath>..\GeneralService.Message\bin\Debug\GeneralService.Utility.ByteUtility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>

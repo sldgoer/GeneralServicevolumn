@@ -27,10 +27,34 @@ namespace GeneralService.Message.Tests
             //网关IP地址211.139.144.201
 
             //网关服务端口号7890
+
+            
+            
             TextMessage tm = new TextMessage("106573401021", "999999", "MGD0019900", "J01615", "RMZVv%9U", "2.0", "211.139.144.201", 7890);
-            tm.RegisterToISMG();
+            tm.Socket_Connected += new EventHandler<Models.ISMGEventArgs>(SocketConnectedEventHandler);
+
+            //tm.RegisterToISMG();
+
+
+            while (true) {  }
 
             Assert.Fail();
+            
         }
+
+        private void SocketConnectedEventHandler(object sender,Models.ISMGEventArgs e)
+        {
+            TextMessage tm = (TextMessage)sender;
+            Console.WriteLine("SocketConnected event up!!!"+e.Message);
+            lock (this)
+            {
+                tm.RegisterToISMG();
+            }
+            
+            
+        }
+
+
+
     }
 }

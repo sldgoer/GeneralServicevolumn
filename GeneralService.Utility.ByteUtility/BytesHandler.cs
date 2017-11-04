@@ -15,8 +15,8 @@ namespace GeneralService.Utility.ByteUtility
             int lenDiff = dest.Length - res.Length;
             //Console.WriteLine(lenDiff);
 
-            Console.WriteLine(res.Length);
-            Console.WriteLine(dest.Length);
+            //Console.WriteLine(res.Length);
+            //Console.WriteLine(dest.Length);
 
             if (lenDiff <= 0) { Buffer.BlockCopy(res, 0, dest, 0, dest.Length); }
             else
@@ -43,7 +43,7 @@ namespace GeneralService.Utility.ByteUtility
             dest = res;
         }
 
-        public void GetBytesFromInt(uint src, ref byte[] dest)
+        public void GetBytesFromInt(int src, ref byte[] dest)
         {
             var res = BitConverter.GetBytes(src);
             dest = res;
